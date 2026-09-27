@@ -1,0 +1,48 @@
+{
+  "_note": "Development set labels. Six synthetic playbooks written so that each gap was decided before the workflow was built around it, which makes these labels true by construction. 'violated' lists the constraint ids seeded as gaps; constraints not listed count as satisfied or not applicable for scoring. This set was used only to develop the prompts and is never reported as accuracy.",
+  "annotations": {
+    "pb1_phishing_compliant.yml": {
+      "violated": []
+    },
+    "pb2_ransomware_no_hitl.yml": {
+      "violated": [
+        "C01",
+        "C02",
+        "C05",
+        "C06",
+        "C08",
+        "C11"
+      ]
+    },
+    "pb3_bruteforce_no_logging.yml": {
+      "violated": [
+        "C03",
+        "C06",
+        "C10"
+      ]
+    },
+    "pb4_malware_no_notification.yml": {
+      "violated": [
+        "C04",
+        "C06"
+      ]
+    },
+    "pb5_exfil_no_triage.yml": {
+      "violated": [
+        "C05",
+        "C06",
+        "C07"
+      ]
+    },
+    "pb6_sentinel_disable_account.json": {
+      "violated": [
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C11"
+      ]
+    }
+  }
+}

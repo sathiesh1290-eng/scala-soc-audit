@@ -1,0 +1,55 @@
+id: seeded-pb5
+name: Data Exfiltration Response
+description: Responds to data exfiltration alerts by blocking destinations and disabling the involved account.
+tasks:
+  "0":
+    type: start
+    task:
+      name: Start
+    nexttasks:
+      '#none#': ["1"]
+  "1":
+    type: condition
+    task:
+      name: Analyst approval - block and disable
+      description: Manual approval (owner - SOC Tier 2) to block destination and disable account.
+    nexttasks:
+      "yes": ["2"]
+  "2":
+    type: regular
+    task:
+      name: Block exfiltration destination
+      description: Block destination IPs and domains at proxy and firewall.
+      script: BlockIPs
+    nexttasks:
+      '#none#': ["3"]
+  "3":
+    type: regular
+    task:
+      name: Disable involved account
+      description: Disable the user account associated with the exfiltration.
+      script: DisableAccount
+    nexttasks:
+      '#none#': ["4"]
+  "4":
+    type: regular
+    task:
+      name: Preserve proxy and DLP logs
+      description: Export and preserve proxy, DLP and endpoint logs for investigation.
+      script: CollectAuditLogs
+    nexttasks:
+      '#none#': ["5"]
+  "5":
+    type: regular
+    task:
+      name: Notify incident manager and data owner
+      description: Notify the incident manager and the affected data owner.
+      script: SendNotifications
+    nexttasks:
+      '#none#': ["6"]
+  "6":
+    type: regular
+    task:
+      name: Document actions in incident record
+      description: Record all response actions in the case management system.
+      script: UpdateIncidentRecord

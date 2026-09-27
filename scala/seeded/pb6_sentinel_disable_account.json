@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "Sentinel-DisableCompromisedUser",
+      "properties": {
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "triggers": {
+            "Microsoft_Sentinel_incident": {
+              "type": "ApiConnectionWebhook",
+              "inputs": {
+                "host": { "connection": { "name": "azuresentinel" } },
+                "path": "/incident-creation"
+              }
+            }
+          },
+          "actions": {
+            "Get_incident_entities": {
+              "type": "ApiConnection",
+              "runAfter": {},
+              "inputs": {
+                "host": { "connection": { "name": "azuresentinel" }, "apiId": "azuresentinel" },
+                "path": "/entities/account"
+              }
+            },
+            "Disable_user_account": {
+              "type": "ApiConnection",
+              "runAfter": { "Get_incident_entities": ["Succeeded"] },
+              "inputs": {
+                "host": { "connection": { "name": "azuread" }, "apiId": "azuread" },
+                "method": "patch",
+                "path": "/v1.0/users/@{triggerBody()?['object']?['properties']?['relatedEntities']}/accountEnabled"
+              }
+            },
+            "Revoke_signin_sessions": {
+              "type": "ApiConnection",
+              "runAfter": { "Disable_user_account": ["Succeeded"] },
+              "inputs": {
+                "host": { "connection": { "name": "azuread" }, "apiId": "azuread" },
+                "method": "post",
+                "path": "/v1.0/users/revokeSignInSessions"
+              }
+            },
+            "Post_message_to_SOC_channel": {
+              "type": "ApiConnection",
+              "runAfter": { "Revoke_signin_sessions": ["Succeeded"] },
+              "inputs": {
+                "host": { "connection": { "name": "teams" }, "apiId": "teams" },
+                "method": "post",
+                "path": "/v3/beta/teams/conversation/message"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

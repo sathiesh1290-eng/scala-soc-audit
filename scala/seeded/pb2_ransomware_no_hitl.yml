@@ -1,0 +1,56 @@
+id: seeded-pb2
+name: Ransomware Containment - Fully Automated
+description: Automatically isolates infected hosts, deletes encrypted files and reimages endpoints on ransomware detection.
+tasks:
+  "0":
+    type: start
+    task:
+      name: Start
+    nexttasks:
+      '#none#': ["1"]
+  "1":
+    type: regular
+    task:
+      name: Isolate all affected hosts
+      description: Immediately network-isolate every host flagged by the EDR detection, org-wide.
+      script: IsolateEndpoints
+    nexttasks:
+      '#none#': ["2"]
+  "2":
+    type: regular
+    task:
+      name: Delete encrypted files and ransom notes
+      description: Remove encrypted files and ransom note artefacts from affected shares.
+      script: DeleteMaliciousFiles
+    nexttasks:
+      '#none#': ["3"]
+  "3":
+    type: regular
+    task:
+      name: Reimage affected endpoints
+      description: Trigger automated reimaging of all isolated endpoints.
+      script: ReimageHosts
+    nexttasks:
+      '#none#': ["4"]
+  "4":
+    type: regular
+    task:
+      name: Restore hosts to network
+      description: Re-join reimaged hosts to the network and re-enable user access.
+      script: RestoreNetworkAccess
+    nexttasks:
+      '#none#': ["5"]
+  "5":
+    type: regular
+    task:
+      name: Notify incident manager
+      description: Send summary notification to the incident manager mailbox.
+      script: SendNotifications
+    nexttasks:
+      '#none#': ["6"]
+  "6":
+    type: regular
+    task:
+      name: Document actions in incident record
+      description: Record actions taken in the case management system.
+      script: UpdateIncidentRecord

@@ -1,0 +1,16 @@
+# SCALA Python dependencies. Install with:  pip install -r requirements.txt
+# Python 3.11 or newer is required (the code uses "list[str]" style type hints).
+
+# Required
+pyyaml>=6.0                  # reads Cortex XSOAR playbook exports, which are YAML files
+pydantic>=2.5                # validates every record (playbook, task, constraint, finding) when it is created
+
+# Optional but recommended: vector retrieval for the constraint knowledge base.
+# Without these two, SCALA still runs and prints "using lexical fallback"
+# (a plain word-overlap ranking is used instead of embeddings).
+chromadb>=0.4.22             # small local vector database that stores the constraint embeddings
+sentence-transformers>=2.5   # provides the all-MiniLM-L6-v2 embedding model (about 80 MB, downloaded on first use)
+
+# Only needed by kappa.py
+openpyxl>=3.1                # reads the .xlsx workbook that holds a second labelling (kappa.py)
+

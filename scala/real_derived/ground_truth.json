@@ -1,0 +1,240 @@
+{
+  "_note": "Reference set labels: 10 real playbooks from the public playbook collection, 12 constraints each, 120 decisions, 53 labelled as violated. Labels were assigned by the author as domain expert, with a written reason for each violation and notes on the decisions that were not violated; labels marked GREY are the ones the author regards as borderline. Conventions fixed before any accuracy was computed: (1) 'not violated' covers a satisfied constraint and one that does not apply; (2) a playbook is a response playbook if it contains a containment or destructive action, and most constraints do not apply to playbooks without one; (3) C07 is violated when a governed action fails to execute (missing integration or error) and the flow ends with no escalation or notification; exits caused only by missing input do not count; (4) C10 is violated whenever response actions occur with no log or telemetry collection task. 'injected' lists violations introduced by a recorded modification of the original playbook (see MODIFICATION_LOG.md); the rest are present in the original.",
+  "annotations": {
+    "rd1_tim_manual_review_unmodified.yml": {
+      "violated": [],
+      "injected": [],
+      "rationale": {
+        "overall": "Unmodified control. Feed-processing job playbook that tags indicators for manual review and can open a review incident; it contains no containment or destructive action.",
+        "C01": "n/a: no destructive action",
+        "C02": "n/a: no evidence-destroying action",
+        "C03": "n/a: no response action to record",
+        "C04": "n/a: no impactful action to notify about",
+        "C05": "n/a: no response action",
+        "C06": "n/a: no incident-closing flow",
+        "C07": "not violated: the 'no results' and 'nothing to tag' exits end a feed-processing job, not a governed response action",
+        "C08": "n/a: no wide-scope action",
+        "C09": "names state purpose",
+        "C10": "n/a: no response action",
+        "C11": "n/a: no restoration",
+        "C12": "n/a: no manual decision point"
+      }
+    },
+    "rd2_eradication_plan_no_gates.yml": {
+      "violated": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "injected": [
+        "C01"
+      ],
+      "rationale": {
+        "C01": "Introduced by the recorded modification: original playbook gated file deletion, process termination and password reset behind manual/auto decision conditions (tasks 14, 15, 21) and analyst data-collection tasks; modification removed all gates so all three destructive actions execute unconditionally from start.",
+        "C02": "Present in the original: file deletion (core-run-script-delete-file) executes with no preceding evidence-capture or sample-preservation task; true of the original as well.",
+        "C03": "Present in the original: no task records actions taken or updates an incident record.",
+        "C04": "Present in the original: no notification task to any stakeholder despite password resets and file deletions affecting users.",
+        "C05": "Present in the original: no triage/severity assessment precedes eradication actions; the removed gates asked whether to run each action, not an assessment of the event.",
+        "C06": "Present in the original: no post-incident review or lessons-learned step.",
+        "not_violated_notes": "C08 not violated (actions target the single host and user of the incident, not a wide scope); C09 names are descriptive; C11 and C12 not applicable (no restoration; no manual decision points remain).",
+        "C07": "[42] 'Is AD enabled?' exits to Done — password reset silently not executed when the integration is absent. Convention: violated when a governed action fails to execute (missing integration/error) and the flow ends with no escalation or notification; pure no-input exits do not count.",
+        "C10": "no log/telemetry collection task. Convention (strict): response actions with no log/telemetry-collection task = violated."
+      }
+    },
+    "rd3_search_delete_auto_all_mailboxes.yml": {
+      "violated": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "injected": [
+        "C01",
+        "C08"
+      ],
+      "rationale": {
+        "C01": "Introduced by the recorded modification: original required an analyst to decide where to search and delete (manual condition task 6); modification removed it so deletion proceeds with no human decision.",
+        "C08": "Introduced by the recorded modification: with task 6 removed, the flow defaults to deleting across ALL available mailboxes - the widest possible scope - with no stronger authorisation than a single-mailbox action.",
+        "C02": "Present in the original: emails are deleted with no preservation/export of copies for evidence beforehand.",
+        "C03": "Present in the original: no task documents what was deleted, from where, or on whose authority.",
+        "C04": "Present in the original: mailbox owners and stakeholders are never notified of deletions from their mailboxes.",
+        "C05": "Present in the original: routing is by available integration (condition 4), not by any assessment or classification of the event.",
+        "C06": "Present in the original: no post-incident review step.",
+        "not_violated_notes": "C09 names are descriptive; C11 and C12 not applicable (no restoration; no manual decision points remain).",
+        "C07": "[4] no-integration branch exits to Done — deletion silently not executed. Convention: violated when a governed action fails to execute (missing integration/error) and the flow ends with no escalation or notification; pure no-input exits do not count.",
+        "C10": "no log/telemetry collection task. Convention (strict): response actions with no log/telemetry-collection task = violated."
+      }
+    },
+    "rd4_handle_fp_full_auto.yml": {
+      "violated": [
+        "C01",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "injected": [
+        "C01",
+        "C07"
+      ],
+      "rationale": {
+        "C01": "Introduced by the recorded modification: original asked whether files should be auto-allowlisted (condition 2) with a manual exception path (task 4); modification removed both, so files are added to the allow list and exclusions created with no human approval - a protection-weakening action class.",
+        "C07": "Introduced by the recorded modification: original asked whether the alert should be closed automatically (condition 9); modification removed it, so alerts are always auto-closed as false positive with no analyst review pathway - handling terminates without any human escalation.",
+        "C06": "Present in the original: no feedback or review step captures why the false positive occurred (e.g. detection-tuning lessons), so recurring FP causes are never learned from.",
+        "not_violated_notes": "C03 not violated (the closeInvestigation action itself constitutes a recorded closure); C04 not applicable to false-positive closure; C05 not violated (the playbook's premise is a prior false-positive judgement supplied as input); C02, C08 and C11 not applicable (no evidence-destroying, wide-scope or restoration action); C12 not applicable (no manual decision points remain).",
+        "C10": "exclusion/allow-list actions with no log collection. Convention (strict): response actions with no log/telemetry-collection task = violated."
+      }
+    },
+    "rd5_Block_Account_-_Generic.yml": {
+      "violated": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "injected": [],
+      "rationale": {
+        "C01": "[13] ad-disable-account with only automated value-checks upstream",
+        "C03": "no record task",
+        "C04": "no notification",
+        "C05": "no assessment before disable",
+        "C06": "no review task",
+        "C07": "[12]/[14] integration-absent exits to Done: block silently not executed",
+        "C10": "no log collection",
+        "not_violated_notes": "C02 n/a (disable destroys no evidence); C08 n/a single account; C09 names clear; C11 n/a; C12 n/a no manual points"
+      }
+    },
+    "rd6_Active_Directory_Investigation.yml": {
+      "violated": [
+        "C06"
+      ],
+      "injected": [],
+      "rationale": {
+        "C01": "[3] collection task (analyst supplies compromised users) precedes [10]->[9] disable; human decision upstream of the destructive action",
+        "C02": "n/a: disable destroys no evidence; ACL scan [2] and event-log review [6] gather evidence anyway",
+        "C03": "[10] setIncident records compromised users",
+        "C04": "[3] emails configured users; GREY: request-for-review rather than stakeholder notification",
+        "C05": "ACL scan [2] and analyst review [3] precede response",
+        "C06": "no lessons-learned/review task after remediation [7] (GREY)",
+        "C07": "'not detected' branch -> [6] continues with human event-log review; nothing terminates silently",
+        "C08": "n/a: single account",
+        "C09": "descriptive names and guidance text",
+        "C10": "[6] reviews domain-controller event logs",
+        "C11": "n/a: no restore",
+        "C12": "GREY: manual tasks [1][6][7] name no owner; [3] targets 'configured users' — treated as identified"
+      }
+    },
+    "rd7_Block_IP_-_Generic_v2.yml": {
+      "violated": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "injected": [],
+      "rationale": {
+        "C01": "blocks at Check Point [6], Zscaler [13], FortiGate [28], PAN-OS sub-playbooks [14-16][21] with only automated value-checks upstream",
+        "C02": "n/a: no evidence-destroying action",
+        "C03": "no task records the blocks",
+        "C04": "no notification task",
+        "C05": "no assessment before blocking; entry -> input check -> block",
+        "C06": "no review task (GREY: utility sub-playbook)",
+        "C07": "[7]/[12]/[27] integration-absent exits to Done — blocks silently not executed. Convention: violated when a governed action fails to execute (missing integration/error) and the flow ends with no escalation or notification; pure no-input exits do not count.",
+        "C08": "org-wide blocking across all enabled firewalls/EDL/DAG with no stronger gate than a single-IP block would have",
+        "C09": "clear names",
+        "C10": "no log collection. Convention (strict): response actions with no log/telemetry-collection task = violated.",
+        "C11": "n/a",
+        "C12": "n/a: no manual points"
+      }
+    },
+    "rd8_BlockADOnPremUser.json": {
+      "violated": [
+        "C01",
+        "C05",
+        "C06",
+        "C10"
+      ],
+      "injected": [],
+      "rationale": {
+        "C01": "Disable_Account_on_Azure_AD and Create_job run directly from the alert trigger; no human decision point",
+        "C02": "n/a",
+        "C03": "Add_comment_to_incident_(V3) records the action (true branch only — GREY)",
+        "C04": "Send_an_email_(V2) tasks notify",
+        "C05": "alert -> get accounts -> disable; no assessment step",
+        "C06": "no review task (GREY)",
+        "C08": "GREY: loops over all incident accounts; treated as per-account scope",
+        "C09": "Logic App action names state purpose",
+        "C10": "no log collection. Convention (strict): response actions with no log/telemetry-collection task = violated.",
+        "C11": "n/a",
+        "C12": "n/a",
+        "not_violated_notes": "NOT violated. The Condition inside For_each has an else branch (Send_an_email_(V2)_2, subject 'Failed to disable ...', to the mailList parameter), so the failure path notifies rather than ending silently (convention 3)."
+      }
+    },
+    "rd9_Forcepoint-Block-IP-Nested-Remediation.json": {
+      "violated": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "injected": [],
+      "rationale": {
+        "C01": "IP block via Forcepoint SMC with no human decision point in this artefact; manual trigger means gating may sit in the PARENT (artefact-boundary caveat)",
+        "C02": "n/a",
+        "C03": "violated. The playbook builds an HTML table of actions and returns it in a Response to the caller; no action writes to the incident record.",
+        "C04": "no stakeholder notification",
+        "C05": "no assessment step; nested remediation acts on caller input",
+        "C06": "no review task (GREY)",
+        "C07": "violated. Four terminate paths (no input; login failed; IP list absent; API issue) set a variable and stop with no escalation or notification; only the Catch scope returns an error response to the caller (convention 3).",
+        "C08": "violated. The loop adds every IP address in the incident to the block list with no stricter gate than a single address.",
+        "C09": "highly descriptive names and comments",
+        "C10": "no log collection. Convention (strict): response actions with no log/telemetry-collection task = violated.",
+        "C11": "n/a",
+        "C12": "n/a"
+      }
+    },
+    "rd10_CiscoASA-CreateInboundAccessRuleOnInterf.json": {
+      "violated": [
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "injected": [],
+      "rationale": {
+        "C01": "PostToTeams adaptive card with 'If submit' gate — an analyst approves before ACL rules change",
+        "C02": "n/a",
+        "C03": "Add_comment_to_incident_(V3) + Update_incident record the action",
+        "C04": "GREY: Teams post notifies analysts; no notification beyond SOC",
+        "C05": "GREY: existing-rule check + analyst review act as assessment before change",
+        "C06": "no review task (GREY)",
+        "C07": "GREY: if the analyst does not submit, the workflow ends silently — uncertain path terminates without escalation",
+        "C08": "n/a: per-IP rules",
+        "C09": "clear names",
+        "C10": "ACL change with no log collection. Convention (strict): response actions with no log/telemetry-collection task = violated.",
+        "C11": "n/a",
+        "C12": "violated. PostToTeams posts an adaptive card to a Teams channel and suspends the workflow until a person submits a choice per IP; the channel id is a blank parameter and no role or owner is named."
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+id: seeded-pb1
+name: Phishing Response - Compliant
+description: Handles reported phishing emails with triage, approval-gated containment, evidence capture, notification, documentation, and post-incident review.
+tasks:
+  "0":
+    type: start
+    task:
+      name: Start
+    nexttasks:
+      '#none#': ["1"]
+  "1":
+    type: regular
+    task:
+      name: Triage and classify severity
+      description: Assess reported email, assign severity and phishing category before response.
+      script: AssignIncidentSeverity
+    nexttasks:
+      '#none#': ["2"]
+  "2":
+    type: regular
+    task:
+      name: Collect evidence and preserve email artefacts
+      description: Save original email, headers, attachments and URLs to the incident record before any remediation.
+      script: PreserveEmailEvidence
+    nexttasks:
+      '#none#': ["3"]
+  "3":
+    type: regular
+    task:
+      name: Collect authentication and mail gateway logs
+      description: Pull relevant audit logs for the affected mailbox and gateway.
+      script: CollectAuditLogs
+    nexttasks:
+      '#none#': ["4"]
+  "4":
+    type: condition
+    task:
+      name: Analyst approval - quarantine mailbox and block sender
+      description: Manual decision by Tier 2 analyst (owner - SOC Tier 2) whether to quarantine the mailbox and block the sender domain.
+    nexttasks:
+      "yes": ["5"]
+      "no": ["7"]
+  "5":
+    type: regular
+    task:
+      name: Quarantine mailbox and block sender
+      description: Approved containment - quarantine affected mailbox, block sender domain at gateway.
+      script: QuarantineMailbox
+    nexttasks:
+      '#none#': ["6"]
+  "6":
+    type: regular
+    task:
+      name: Verify no further malicious mail delivered
+      description: Re-scan mailboxes to confirm eradication before restoring normal mail flow.
+      script: RescanMailboxes
+    nexttasks:
+      '#none#': ["7"]
+  "7":
+    type: regular
+    task:
+      name: Notify incident manager and affected user
+      description: Send notification to incident manager and inform the affected user of outcome.
+      script: SendNotifications
+    nexttasks:
+      '#none#': ["8"]
+  "8":
+    type: regular
+    task:
+      name: Document actions in incident record
+      description: Write all actions taken, timestamps and decisions to the case management system.
+      script: UpdateIncidentRecord
+    nexttasks:
+      '#none#': ["9"]
+  "9":
+    type: regular
+    task:
+      name: Post-incident review and lessons learned
+      description: Schedule lessons-learned review and record playbook improvement suggestions.
+      script: CreateLessonsLearnedTask

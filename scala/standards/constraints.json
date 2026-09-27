@@ -1,0 +1,174 @@
+{
+  "_note": "SCALA constraint knowledge base, frozen on 11 August 2026: twelve natural-language auditable constraints derived from NIST SP 800-61r3, ISO/IEC 27001:2022 Annex A and CIS Controls v8. Constraint texts are paraphrased operationalisations, not verbatim standard text. Each record carries its rule text, audit question, all supporting sources, a default severity, an inference type (direct = stated almost as written in the standard; derived = an interpretation step was needed and is recorded) and a derivation note. NIST and CIS references are given at function and control level. The file was frozen before any evaluation run; a defect found later would be recorded for a later version rather than corrected in place.",
+  "constraints": [
+    {
+      "constraint_id": "C01",
+      "source": "NIST SP 800-61r3",
+      "control_ref": "NIST SP 800-61r3 Respond function",
+      "constraint_text": "Disruptive or destructive response actions (isolating hosts, disabling accounts, deleting files, blocking business services) should require explicit human authorisation or documented pre-approval criteria before execution.",
+      "audit_question": "Does the playbook include a human approval or decision gate before tasks that disable accounts, isolate hosts, delete data, or block services?",
+      "default_severity": "high",
+      "sources": [
+        "NIST SP 800-61r3 Respond function",
+        "ISO/IEC 27001 A.5.24",
+        "ISO/IEC 27001 A.5.26",
+        "CIS Controls v8 Control 17"
+      ],
+      "inference_type": "derived",
+      "derivation": "Standards require containment/response actions to be governed decisions made by identified responsible parties per documented procedure (NIST Respond; A.5.24 responsibilities; A.5.26 documented response; CIS 17 designated personnel). An unconditionally executing destructive workflow provides no structural mechanism for such a decision; hence a decision gate is required."
+    },
+    {
+      "constraint_id": "C02",
+      "source": "ISO/IEC 27001:2022 Annex A",
+      "control_ref": "ISO/IEC 27001 A.5.28",
+      "constraint_text": "Evidence relevant to an incident should be identified, collected, and preserved before eradication or remediation actions that could destroy it.",
+      "audit_question": "Does the playbook capture forensic evidence (memory, disk, logs, samples) before any task that removes malware, reimages hosts, or deletes artefacts?",
+      "default_severity": "high",
+      "sources": [
+        "ISO/IEC 27001 A.5.28",
+        "NIST SP 800-61r3 Respond function"
+      ],
+      "inference_type": "derived",
+      "derivation": "A.5.28 states evidence should be identified, collected and preserved; the ordering, before destructive remediation, is inferred from the fact that eradication can destroy evidence."
+    },
+    {
+      "constraint_id": "C03",
+      "source": "ISO/IEC 27001:2022 Annex A",
+      "control_ref": "ISO/IEC 27001 A.8.15",
+      "constraint_text": "Actions taken during incident response should be logged and documented so that a reviewable record of the response exists.",
+      "audit_question": "Does the playbook include tasks that record actions taken, update the incident record, or write to a case management system?",
+      "default_severity": "medium",
+      "sources": [
+        "ISO/IEC 27001 A.8.15",
+        "CIS Controls v8 Control 8"
+      ],
+      "inference_type": "direct",
+      "derivation": "A.8.15 requires activities to be logged; applied to response actions taken by the playbook."
+    },
+    {
+      "constraint_id": "C04",
+      "source": "NIST SP 800-61r3",
+      "control_ref": "NIST SP 800-61r3 Respond function (communications)",
+      "constraint_text": "Relevant stakeholders (incident manager, affected system owners, and where required regulators or users) should be notified during incident handling.",
+      "audit_question": "Does the playbook include notification or communication tasks to stakeholders beyond the SOC (e.g. incident manager, system owner, legal, users)?",
+      "default_severity": "medium",
+      "sources": [
+        "NIST SP 800-61r3 Respond function (communications)",
+        "CIS Controls v8 Control 17"
+      ],
+      "inference_type": "direct",
+      "derivation": "Incident-related notification and communications are an explicit part of the NIST Respond function and CIS incident response management."
+    },
+    {
+      "constraint_id": "C05",
+      "source": "ISO/IEC 27001:2022 Annex A",
+      "control_ref": "ISO/IEC 27001 A.5.25",
+      "constraint_text": "Security events should be assessed and categorised (severity, scope, type) before response actions are selected.",
+      "audit_question": "Does the playbook include a triage, severity-assessment, or classification step before response actions execute?",
+      "default_severity": "medium",
+      "sources": [
+        "ISO/IEC 27001 A.5.25",
+        "NIST SP 800-61r3 Respond function"
+      ],
+      "inference_type": "derived",
+      "derivation": "A.5.25 requires assessment and decision on information security events; the requirement that the assessment precede the response actions in the workflow is inferred."
+    },
+    {
+      "constraint_id": "C06",
+      "source": "ISO/IEC 27001:2022 Annex A",
+      "control_ref": "ISO/IEC 27001 A.5.27",
+      "constraint_text": "Knowledge gained from incidents should be captured through a post-incident review or lessons-learned activity.",
+      "audit_question": "Does the playbook include a closing step for post-incident review, lessons learned, or playbook improvement?",
+      "default_severity": "low",
+      "sources": [
+        "ISO/IEC 27001 A.5.27",
+        "NIST SP 800-61r3 ID.IM-03",
+        "CIS Controls v8 Safeguard 17.8"
+      ],
+      "inference_type": "direct",
+      "derivation": "A.5.27 requires learning from incidents; SP 800-61r3 ID.IM-03 requires improvements to be identified from the execution of incident response; CIS 17.8 requires post-incident reviews. Operationalised as a closing post-incident review or lessons-learned step."
+    },
+    {
+      "constraint_id": "C07",
+      "source": "CIS Controls v8",
+      "control_ref": "CIS Controls v8 Control 17",
+      "constraint_text": "Escalation paths should be defined: when automated handling cannot resolve or classify an incident, the playbook should route it to a human analyst rather than terminating silently.",
+      "audit_question": "Do failure or uncertain branches route to a human analyst or escalation task rather than ending the workflow silently?",
+      "default_severity": "medium",
+      "sources": [
+        "CIS Controls v8 Control 17 (17.1, 17.4)",
+        "NIST SP 800-61r3 RS.MA-01, RS.MA-04"
+      ],
+      "inference_type": "derived",
+      "derivation": "Standards require incidents to be managed by designated personnel through their lifecycle (CIS 17.1, 17.4; RS.MA-01) and escalated when more resources or a change of strategy are needed (RS.MA-04, where escalation means increasing resources or time frames). A workflow branch that terminates silently on failure or uncertainty removes the incident from managed handling, so routing to a human analyst is required. Derived: the standards do not state the rule for automated workflows in these words."
+    },
+    {
+      "constraint_id": "C08",
+      "source": "NIST SP 800-61r3",
+      "control_ref": "NIST SP 800-61 containment strategy criteria (r2 lineage; r3 Respond function)",
+      "constraint_text": "Containment actions should be scoped and proportionate: broad actions affecting many users or systems require stronger authorisation than narrowly scoped ones.",
+      "audit_question": "Are wide-scope actions (org-wide blocks, mass account actions, network-wide isolation) gated more strictly than single-host or single-user actions?",
+      "default_severity": "high",
+      "sources": [
+        "NIST SP 800-61r3 RS.MI-01 (containment criteria)",
+        "CIS Controls v8 Control 17"
+      ],
+      "inference_type": "derived",
+      "derivation": "SP 800-61r3 frames containment as an action selected against criteria: the incident type, the risk evaluation factors of RS.MA and the duration of the measure (the RS.MI category note). Proportionality between the scope of an automated action and the strength of its authorisation operationalises that deliberation for playbooks. Derived."
+    },
+    {
+      "constraint_id": "C09",
+      "source": "ISO/IEC 27001:2022 Annex A",
+      "control_ref": "ISO/IEC 27001 A.5.26",
+      "constraint_text": "Incidents should be responded to according to documented procedures; playbook steps should state their purpose clearly enough to be followed and reviewed.",
+      "audit_question": "Do tasks have meaningful names or descriptions that state what the step does and why (as opposed to opaque script references only)?",
+      "default_severity": "low",
+      "sources": [
+        "ISO/IEC 27001 A.5.26"
+      ],
+      "inference_type": "derived",
+      "derivation": "A.5.26 requires response per documented procedures; a playbook whose steps are opaque script references cannot function as a reviewable documented procedure, so meaningful task naming/description is required."
+    },
+    {
+      "constraint_id": "C10",
+      "source": "CIS Controls v8",
+      "control_ref": "CIS Controls v8 Control 8",
+      "constraint_text": "Audit logs relevant to the incident should be collected and retained as part of response, supporting later detection engineering and investigation.",
+      "audit_question": "Does the playbook collect or preserve relevant audit logs (authentication logs, endpoint telemetry, network logs) during handling?",
+      "default_severity": "medium",
+      "sources": [
+        "CIS Controls v8 Control 8",
+        "ISO/IEC 27001 A.8.15"
+      ],
+      "inference_type": "direct",
+      "derivation": "CIS Control 8 requires collection and retention of audit logs; applied to logs relevant to the incident during response."
+    },
+    {
+      "constraint_id": "C11",
+      "source": "NIST SP 800-61r3",
+      "control_ref": "NIST SP 800-61r3 Recover function",
+      "constraint_text": "Recovery or restoration steps should verify that the threat has been removed before restoring services or re-enabling access.",
+      "audit_question": "Before re-enabling accounts, unblocking indicators, or restoring hosts, does the playbook verify eradication (e.g. rescanning, confirming no persistence)?",
+      "default_severity": "medium",
+      "sources": [
+        "NIST SP 800-61r3 RC.RP-03",
+        "NIST SP 800-61r3 RC.RP-05"
+      ],
+      "inference_type": "derived",
+      "derivation": "RC.RP-03 requires the integrity of restoration assets to be verified before use and RC.RP-05 requires the integrity of restored assets to be verified before they are returned to service; restoring or re-enabling while the threat persists defeats the response, so verification of eradication must precede restoration. Derived for the automated case."
+    },
+    {
+      "constraint_id": "C12",
+      "source": "ISO/IEC 27001:2022 Annex A",
+      "control_ref": "ISO/IEC 27001 A.5.24",
+      "constraint_text": "Incident management responsibilities should be identifiable: playbooks should indicate ownership or the role responsible for manual decision points.",
+      "audit_question": "Where manual decisions exist, is the responsible role or owner identifiable (assignee, team, or role named)?",
+      "default_severity": "low",
+      "sources": [
+        "ISO/IEC 27001 A.5.24"
+      ],
+      "inference_type": "derived",
+      "derivation": "A.5.24 requires incident management roles and responsibilities to be defined; at playbook level this is operationalised as identifiable ownership of manual decision points."
+    }
+  ]
+}

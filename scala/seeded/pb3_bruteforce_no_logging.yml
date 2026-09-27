@@ -1,0 +1,48 @@
+id: seeded-pb3
+name: Brute Force Account Response
+description: Responds to brute-force alerts by resetting credentials and blocking source IPs after analyst approval.
+tasks:
+  "0":
+    type: start
+    task:
+      name: Start
+    nexttasks:
+      '#none#': ["1"]
+  "1":
+    type: regular
+    task:
+      name: Triage alert severity
+      description: Classify severity based on account privilege and attempt volume.
+      script: AssignIncidentSeverity
+    nexttasks:
+      '#none#': ["2"]
+  "2":
+    type: condition
+    task:
+      name: Analyst approval - reset credentials and block IP
+      description: Manual approval by SOC analyst (owner - SOC Tier 1) before account actions.
+    nexttasks:
+      "yes": ["3"]
+      "no": ["5"]
+  "3":
+    type: regular
+    task:
+      name: Force password reset and revoke sessions
+      description: Reset the targeted account credentials and revoke active sessions.
+      script: ForcePasswordReset
+    nexttasks:
+      '#none#': ["4"]
+  "4":
+    type: regular
+    task:
+      name: Block source IPs at firewall
+      description: Add attacking source IPs to the firewall block list.
+      script: BlockIPs
+    nexttasks:
+      '#none#': ["5"]
+  "5":
+    type: regular
+    task:
+      name: Notify account owner
+      description: Inform the affected user and their manager of the action taken.
+      script: SendNotifications
