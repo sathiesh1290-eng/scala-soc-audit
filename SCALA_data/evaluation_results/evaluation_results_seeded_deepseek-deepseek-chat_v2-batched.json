@@ -1,0 +1,105 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "prompt_version": "v2-batched",
+  "kb_backend": "chromadb+all-MiniLM-L6-v2",
+  "micro_precision": 0.8,
+  "micro_recall": 0.6,
+  "micro_f1": 0.6857,
+  "tp": 12,
+  "fp": 3,
+  "fn": 8,
+  "per_playbook": [
+    {
+      "file": "pb1_phishing_compliant.yml",
+      "predicted": [],
+      "actual": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "seconds": 11.4
+    },
+    {
+      "file": "pb2_ransomware_no_hitl.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C11"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C05",
+        "C06",
+        "C08",
+        "C11"
+      ],
+      "precision": 0.75,
+      "recall": 1.0,
+      "seconds": 11.2
+    },
+    {
+      "file": "pb3_bruteforce_no_logging.yml",
+      "predicted": [
+        "C02",
+        "C03",
+        "C06",
+        "C10"
+      ],
+      "actual": [
+        "C03",
+        "C06",
+        "C10"
+      ],
+      "precision": 0.75,
+      "recall": 1.0,
+      "seconds": 35.4
+    },
+    {
+      "file": "pb4_malware_no_notification.yml",
+      "predicted": [],
+      "actual": [
+        "C04",
+        "C06"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "seconds": 17.8
+    },
+    {
+      "file": "pb5_exfil_no_triage.yml",
+      "predicted": [
+        "C05",
+        "C06"
+      ],
+      "actual": [
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "precision": 1.0,
+      "recall": 0.6667,
+      "seconds": 12.6
+    },
+    {
+      "file": "pb6_sentinel_disable_account.json",
+      "predicted": [
+        "C01"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C11"
+      ],
+      "precision": 1.0,
+      "recall": 0.1667,
+      "seconds": 32.3
+    }
+  ]
+}

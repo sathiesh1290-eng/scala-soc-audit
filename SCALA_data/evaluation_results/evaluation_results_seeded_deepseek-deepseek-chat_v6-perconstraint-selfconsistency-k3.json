@@ -1,0 +1,127 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "prompt_version": "v6-perconstraint-selfconsistency-k3",
+  "kb_backend": "chromadb+all-MiniLM-L6-v2",
+  "micro_precision": 0.5714,
+  "micro_recall": 1.0,
+  "micro_f1": 0.7273,
+  "tp": 20,
+  "fp": 15,
+  "fn": 0,
+  "per_playbook": [
+    {
+      "file": "pb1_phishing_compliant.yml",
+      "predicted": [
+        "C07"
+      ],
+      "actual": [],
+      "precision": 0.0,
+      "recall": 1.0,
+      "seconds": 143.7
+    },
+    {
+      "file": "pb2_ransomware_no_hitl.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C11"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C05",
+        "C06",
+        "C08",
+        "C11"
+      ],
+      "precision": 0.75,
+      "recall": 1.0,
+      "seconds": 145.6
+    },
+    {
+      "file": "pb3_bruteforce_no_logging.yml",
+      "predicted": [
+        "C02",
+        "C03",
+        "C06",
+        "C10",
+        "C11"
+      ],
+      "actual": [
+        "C03",
+        "C06",
+        "C10"
+      ],
+      "precision": 0.6,
+      "recall": 1.0,
+      "seconds": 168.6
+    },
+    {
+      "file": "pb4_malware_no_notification.yml",
+      "predicted": [
+        "C04",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "actual": [
+        "C04",
+        "C06"
+      ],
+      "precision": 0.5,
+      "recall": 1.0,
+      "seconds": 190.9
+    },
+    {
+      "file": "pb5_exfil_no_triage.yml",
+      "predicted": [
+        "C02",
+        "C05",
+        "C06",
+        "C07",
+        "C11"
+      ],
+      "actual": [
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "precision": 0.6,
+      "recall": 1.0,
+      "seconds": 139.6
+    },
+    {
+      "file": "pb6_sentinel_disable_account.json",
+      "predicted": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C11"
+      ],
+      "precision": 0.5,
+      "recall": 1.0,
+      "seconds": 198.6
+    }
+  ]
+}

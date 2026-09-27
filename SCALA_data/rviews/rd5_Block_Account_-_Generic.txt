@@ -1,0 +1,37 @@
+PLAYBOOK: Block Account - Generic  [xsoar_yaml]  (9 tasks)
+SOURCE:   real_derived/rd5_Block_Account_-_Generic.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) (unnamed)
+  [2] (title) Done
+  [5] (title) Block accounts
+  [8] (condition) Is there a username to block?  | Verify that the playbook input includes at least one username to block.
+  [12] (condition) Is Active Directory enabled?  | Verify that there is a valid instance of Active Directory enabled.
+
+  [13] (regular) Disable account in active directory  | tool/op: activedir|||ad-disable-account  | Disable the account using Active Directory.
+  [14] (condition) Is PAN-OS enabled?  | Verify that there is a valid instance of PAN-OS enabled.
+
+  [15] (regular) PAN-OS - Register Tag to User  | tool/op: |||panorama-register-user-tag  | Apply a tag to a user.
+  [16] (condition) Is there a Tag name to register?  | Verify that the playbook input includes at least one tag to apply to the user.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 8
+  12 -> 2, 13
+  13 -> 2
+  14 -> 2, 16
+  15 -> 2
+  16 -> 2, 15
+  5 -> 12, 14
+  8 -> 2, 5
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [8] condition: Is there a username to block? -> AUTOMATED value-check (conditions array)
+  [12] condition: Is Active Directory enabled? -> AUTOMATED value-check (conditions array)
+  [14] condition: Is PAN-OS enabled? -> AUTOMATED value-check (conditions array)
+  [16] condition: Is there a Tag name to register? -> AUTOMATED value-check (conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [8] Is there a username to block?: exits -> 2 (terminal title 'Done' - no escalation), 5
+  [12] Is Active Directory enabled?: exits -> 2 (terminal title 'Done' - no escalation), 13
+  [14] Is PAN-OS enabled?: exits -> 2 (terminal title 'Done' - no escalation), 16
+  [16] Is there a Tag name to register?: exits -> 2 (terminal title 'Done' - no escalation), 15

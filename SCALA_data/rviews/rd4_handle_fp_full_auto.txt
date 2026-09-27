@@ -1,0 +1,41 @@
+PLAYBOOK: Handle False Positive Alerts  [xsoar_yaml]  (14 tasks)
+SOURCE:   real_derived/rd4_handle_fp_full_auto.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) (unnamed)
+  [1] (regular) Add the source IP to Alert Exclusion list  | tool/op: |||core-add-exclusion  | Add the source IP to Alert Exclusion list.
+  [5] (condition) Check the alert source  | Check the alert source - XDR Analytics or XDR Agent alerts.
+  [7] (title) Alert Closing  | Close the alert.
+  [8] (title) Add Exception or Exclusion 
+  [10] (regular) Close alert as FP  | tool/op: Builtin|||closeInvestigation  | Close the alert as false positive.
+  [11] (title) Done
+  [12] (condition) Check alert origin  | Check the alert's origin - FW, AWS, etc.
+  [13] (title) NGFW Alerts
+  [14] (regular) Add file hash to allowed list  | tool/op: |||core-allowlist-files  | Adds requested files to allow list if they are not already on block list or allow list.
+  [15] (title) AWS IAM Alerts
+  [16] (regular) Add the host IP and username to Alert Exclusion list  | tool/op: |||core-add-exclusion  | Add the host IP and username to Alert Exclusion list.
+  [17] (title) SHA256
+  [18] (regular) Add the file SHA256 to Alert Exclusion list  | tool/op: |||core-add-exclusion  | Add the file SHA256 to Alert Exclusion list.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 8
+  1 -> 7
+  10 -> 11
+  12 -> 17, 15, 13
+  13 -> 1
+  14 -> 7
+  15 -> 16
+  16 -> 7
+  17 -> 18
+  18 -> 7
+  5 -> 11, 12, 14
+  7 -> 10
+  8 -> 5
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [5] condition: Check the alert source -> AUTOMATED value-check (conditions array)
+  [12] condition: Check alert origin -> AUTOMATED value-check (conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [5] Check the alert source: exits -> 11 (terminal title 'Done' - no escalation), 12, 14
+  [12] Check alert origin: exits -> 17, 15, 13

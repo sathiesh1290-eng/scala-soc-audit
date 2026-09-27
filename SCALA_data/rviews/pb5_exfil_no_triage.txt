@@ -1,0 +1,25 @@
+PLAYBOOK: Data Exfiltration Response  [xsoar_yaml]  (7 tasks)
+SOURCE:   seeded/pb5_exfil_no_triage.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) Start
+  [1] (condition) Analyst approval - block and disable  | Manual approval (owner - SOC Tier 2) to block destination and disable account.
+  [2] (regular) Block exfiltration destination  | tool/op: BlockIPs  | Block destination IPs and domains at proxy and firewall.
+  [3] (regular) Disable involved account  | tool/op: DisableAccount  | Disable the user account associated with the exfiltration.
+  [4] (regular) Preserve proxy and DLP logs  | tool/op: CollectAuditLogs  | Export and preserve proxy, DLP and endpoint logs for investigation.
+  [5] (regular) Notify incident manager and data owner  | tool/op: SendNotifications  | Notify the incident manager and the affected data owner.
+  [6] (regular) Document actions in incident record  | tool/op: UpdateIncidentRecord  | Record all response actions in the case management system.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 1
+  1 -> 2
+  2 -> 3
+  3 -> 4
+  4 -> 5
+  5 -> 6
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [1] condition: Analyst approval - block and disable -> MANUAL candidate (unscripted, no conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [1] Analyst approval - block and disable: exits -> 2

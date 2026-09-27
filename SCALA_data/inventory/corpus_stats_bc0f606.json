@@ -1,0 +1,3812 @@
+{
+ "files_per_dir": {
+  "catalyst": 3,
+  "chronicle": 4,
+  "cisa": 216,
+  "demisto": 59,
+  "fortinet": 193,
+  "guard_sight": 55,
+  "iacd_automate": 9,
+  "logichub": 70,
+  "microsoft": 3,
+  "ms_azure": 1332,
+  "oasis_open": 1,
+  "rapid7": 214,
+  "resolve": 150,
+  "shuffle": 18,
+  "splunk": 155,
+  "threat_connect": 154,
+  "tines": 87,
+  "xsoar": 131
+ },
+ "checks": {
+  "sentinel_count_ok": 193,
+  "sentinel_total": 193,
+  "xsoar_ids_ok": 189,
+  "xsoar_refs_ok": 189,
+  "xsoar_total": 189,
+  "bpmn_parsed": 90
+ },
+ "dangling": [
+  "ms_azure/Get-AlertEntitiesEnrichment/UserEnrichment.template.json",
+  "ms_azure/Guardicore-Import-Assets/azuredeploy.json"
+ ],
+ "parsed": [
+  {
+   "file": "cisa/Detect/Analyst Review of System Alerts/Analyst Review of System Alerts.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 10,
+   "human_points": 2,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Calculate IOC Risk Score/Calculate IOC Risk Score.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Evaluate IOC/Evaluate IOC.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 24,
+   "human_points": 0,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Detect/ICS Asset Integrity Check/ICS Asset Integrity Check.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 10,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Identify Systems and IOCs/Identify Systems and IOCs.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Monitor Account/Monitor Account.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 18,
+   "human_points": 1,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Monitor Internal System/Monitor Internal System.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Process AV-EDR Alert/Process AV-EDR Alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Process Alert on Account/Process Alert on Account.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Process ICS alert/Process ICS alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 11,
+   "human_points": 1,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Process Internal FW Alert/Process Internal FW Alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Process Internal IDS Alert/Process Internal IDS Alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Process New IOCs/Process New IOCs.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 20,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Detect/Process Service Heartbeat Failure/Process Service Heartbeat Failure.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Removable Media Alert/Removable Media Alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 11,
+   "human_points": 1,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Detect/Rogue System Detected/Rogue System Detected.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 21,
+   "human_points": 3,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Detect/Suspicious Email Submission Triage/Suspicious Email Submission Triage.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 28,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Detect/System Response Type Review/System Response Type Review.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Identify/Create Submitter Behavior Profile/Create Submitter Behavior Profile.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 20,
+   "human_points": 1,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Identify/Curate Incoming STIX messages/Curate Incoming STIX messages.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 26,
+   "human_points": 2,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Identify/Process Incoming CVE/Process Incoming CVE.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 22,
+   "human_points": 1,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Identify/Remove False Positive STIX Object/Remove False Positive STIX Object.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Identify/Review Submitted IDS Rules/Review Submitted IDS Rules.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Identify/Share Event Information/Share Event Information.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 5,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Identify/Submit IOC Sighting/Submit IOC Sighting.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 13,
+   "human_points": 2,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Identify/Threat Intel Receipt/Threat Intel Receipt.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 17,
+   "human_points": 3,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Protect/CVE Patch Testing/CVE Patch Testing.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 24,
+   "human_points": 5,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Protect/Patch Systems for CVE/Patch Systems for CVE.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 13,
+   "human_points": 5,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Protect/Verify CVE Patch Testing/Verify CVE Patch Testing.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 15,
+   "human_points": 3,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Recover/Blocked File Digest Review/Blocked File Digest Review.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 11,
+   "human_points": 4,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Recover/Monitor Threat Feed Ingest/Monitor Threat Feed Ingest.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 10,
+   "human_points": 3,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Recover/Resolve IOC Block-Allow Conflict/Resolve IOC Block-Allow Conflict.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 7,
+   "human_points": 3,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Account COA Alert Review/Account COA Alert Review.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 41,
+   "human_points": 9,
+   "decision_points": 10,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Add Domain-URL to IDS/Add Domain-URL to IDS.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Add Email to Blocked Senders List/Add Email to Blocked Senders List.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Add File Hash to IDS/Add File Hash to IDS.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Add IP to IDS/Add IP to IDS.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Analyst review of Account Alert/Analyst review of Account Alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 11,
+   "human_points": 3,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Block Domain-URL at Firewall/Block Domain-URL at Firewall.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Block Domain-URL at Proxy/Block Domain-URL at Proxy.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Block Email to Email Security Appliance/Block Email to Email Security Appliance.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Block File at Endpoint/Block File at Endpoint.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Block IP at Firewall/Block IP at Firewall.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Evaluate IOC COAs/Evaluate IOC COAs.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 32,
+   "human_points": 2,
+   "decision_points": 10,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/ICS Asset Mitigation/ICS Asset Mitigation.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 12,
+   "human_points": 1,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/ICS Asset Recovery/ICS Asset Recovery.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 2,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Rebuild Server/Rebuild Server.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 18,
+   "human_points": 3,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Reinstall Service/Reinstall Service.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 19,
+   "human_points": 4,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/Remediate Systems/Remediate Systems.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 17,
+   "human_points": 4,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Respond/Select Heartbeat Failure COAs/Select Heartbeat Failure COAs.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 22,
+   "human_points": 4,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Respond/System COA Alert Review/System COA Alert Review.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 21,
+   "human_points": 7,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/IOCs from Email/ParseEmail.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Domain IOC/Domain IOC Response Ex1.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 16,
+   "human_points": 2,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Domain IOC/Response to Domain IOC Ex2.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 20,
+   "human_points": 3,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Domain IOC/Response to Domain IOC Ex3.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 25,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Domain IOC/Response to Domain IOC Ex4.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 25,
+   "human_points": 2,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Domain IOC/Response to Domain IOC Ex5.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Email IOC/Response to Email IOC Ex1.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 12,
+   "human_points": 3,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Email IOC/Response to Email IOC Ex2.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 18,
+   "human_points": 2,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to Email IOC/Response to Email IOC Ex3.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 19,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to File Hash IOC/Response to File Hash Ex1.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 2,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to File Hash IOC/Response to File Hash IOC Ex2.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 11,
+   "human_points": 3,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to File Hash IOC/Response to File Hash IOC Ex3.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 27,
+   "human_points": 0,
+   "decision_points": 7,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to File Hash IOC/Response to File Hash IOC Ex4.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 22,
+   "human_points": 2,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to IP IOC/Response to IP IOC Ex1.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 2,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to IP IOC/Response to IP IOC Ex2.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 38,
+   "human_points": 3,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to IP IOC/Response to IP IOC Ex3.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 25,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Response to IP IOC/Response to IP IOC Ex4.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 25,
+   "human_points": 2,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/Domain_Regret_Workflow.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 19,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/Email_Workflow.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/Filehash_Regret_Workflow.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/High_Level_Process.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/IP_Regret_Workflow.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 23,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/Parse_IOC.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 19,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/Post_Analyst_Workflow.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/Revocation_Workflow.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed/STIX_Workflow.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed Ingestion/Threat Feed Ingestion Ex1.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 9,
+   "human_points": 2,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed Ingestion/Threat Feed Ingestion Ex2.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Feed Ingestion/Threat Feed Ingestion Ex3.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "cisa/Use Case -- SLTT Pilot/Threat Intel Enrichment/Threat Enrichment.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/Infocyte-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/Malwarebytes-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 9,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/TestNozomiPlaybook.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/Tufin-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 9,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-AWS-CloudTrail_Test_.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-AWS-Route53-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Aria-Packet-Intelligence-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 77,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Atlassian_Confluence_Integration_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 17,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-BMCHelixRemedyforce-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 42,
+   "human_points": 0,
+   "decision_points": 19,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-CVE_Enrichment_-_Generic_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-DomainTools_Iris_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-Email_Address_Enrichment_Generic_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Entity_Enrichment_-_Generic_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Extract_Indicators_From_File_-_test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Extract_Indicators_From_File_-_test_4_0.yml",
+   "format": "xsoar_yaml",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Fidelis_Endpoint.yml",
+   "format": "xsoar_yaml",
+   "tasks": 31,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Genians-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Get_File_Sample_By_Hash_-_Carbon_Black_Enterprise_Response_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Get_File_Sample_By_Hash_-_Generic_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Get_File_Sample_From_Hash_-_Generic_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Get_File_Sample_From_Path_-_D2_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Gophish-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 67,
+   "human_points": 0,
+   "decision_points": 32,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-IP_Enrichment_-_Generic_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Jask_Test-4.0.0.yml",
+   "format": "xsoar_yaml",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-McAfeeESMTest.yml",
+   "format": "xsoar_yaml",
+   "tasks": 29,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Microsoft_Graph_Mail_Sender_test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Minerva_Test_playbook.yml",
+   "format": "xsoar_yaml",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-PAN-OS_-_Block_IP_and_URL_-_External_Dynamic_List_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-PAN-OS_EDL_Service_Configuration_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-PAN_OS_EDL_SETUP-V2-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Packetsled_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-PassiveTotal_v2-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-PhishMe_test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Phishing_-_Core_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Phishing_test_-_Inline.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Phishing_test_-_attachment.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Phishing_v2_Test_-_Attachment.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Phishing_v2_Test_-_Inline.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-PostgreSQL-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-Process_Email_-_Generic_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 20,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Recorded_Future_Test_4_0.yml",
+   "format": "xsoar_yaml",
+   "tasks": 41,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Search_Endpoints_By_Hash_-_Carbon_Black_Response_-_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-ServiceNow.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-ServiceNow_TestScripts.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-ServiceNow_Test_tasks.yml",
+   "format": "xsoar_yaml",
+   "tasks": 37,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-TestCommonPython_4_1.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-TestGetDuplicatesIncidentsByMl.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-TestParseEmailFile-deprecated-script.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-TestParseEmailHeaders.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-TestWordFileToIOC.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-Test_SafeBreach.yml",
+   "format": "xsoar_yaml",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-ThreatConnect_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 44,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-TruSTAR_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Vectra-Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "demisto/playbook-Windows_Defender_Advanced_Threat_Protection_Test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 19,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-WordTokenizeTest.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-Zendesk_test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "demisto/playbook-cofense_triage-test.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "iacd_automate/Firewall_Alert_-_Threat_Traffic.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "iacd_automate/Firewall_Alert_Generic.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "iacd_automate/Firewall_Unknown_URL.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 27,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "iacd_automate/Malware_Detection_Response.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "iacd_automate/Notification_Of_New_Potentially_Malicious_File_On_Network.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 23,
+   "human_points": 2,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "iacd_automate/Rogue_Alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "iacd_automate/Suspicious_Email.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "iacd_automate/Threat_Feed_to_Blocklist.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "iacd_automate/Virus_Alert.bpmn",
+   "format": "cisa_bpmn",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AD4IoT-AutoCloseIncidents/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AD4IoT-MailbyProductionLine/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AD4IoT-NewAssetServiceNowTicket/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AD4IoT-TritonDetectionAndResponse/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 35,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/ADX-Health-Playbook/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AS-PagerDuty-Integration/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 17,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AS-Slack-Integration/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 23,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AS_Alert_Spiderfoot_Scan/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 20,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Affected-Key-Credentials-CVE-2021-42306/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Aggregate-SNOW-tickets/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/AutoConnect-ASCSubscriptions/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 21,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Block-AADUserOrAdmin/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 28,
+   "human_points": 1,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Block-AADUserOrAdmin/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 1,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Block-ExchangeIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Block-IPs-on-MDATP-Using-GraphSecurity/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 10,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Block-OnPremADUser/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Change-Incident-Severity/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Change-Incident-Severity/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/CiscoASA/CiscoASA-AddIPtoNetworkObjectGroup/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 26,
+   "human_points": 1,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/CiscoASA/CiscoASA-CreateACEInACL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 1,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/CiscoASA/CiscoASA-CreateInboundAccessRuleOnInterface/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 1,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Close-Incident-MCAS/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Close-SentinelIncident-fromSNOW/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Comment-OriginAlertURL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Comment-RemediationSteps/azuredeploy_alert.json",
+   "format": "sentinel_logicapp",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Comment-RemediationSteps/azuredeploy_incident.json",
+   "format": "sentinel_logicapp",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Create-AzureSnapshot/Create-Snapshot.json",
+   "format": "sentinel_logicapp",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Create-IBMResilientIncident/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Create-IBMResilientIncident/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 21,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Dismiss_Upstream_Events/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Edgescan-AzureSentinel-Integration/azuredeploy1.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Edgescan-AzureSentinel-Integration/azuredeploy2.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Edgescan-AzureSentinel-Integration/azuredeploy3.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Enrich-SentinelIncident-GreyNoise-IP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 54,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Enrich-SentinelIncident-GreyNoiseCommunity-IP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 26,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Enrich-SentinelIncident-MDATPTVM/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Export-Incidents-With-Comments/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 28,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Export-Report-CSV/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/F5BigIP/Playbooks/BasePlaybook-F5BigIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/F5BigIP/Playbooks/BlockIP-F5BigIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 43,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/F5BigIP/Playbooks/BlockURL-F5BigIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 36,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/F5BigIP/Playbooks/EnrichmentIP-F5BigIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 31,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/F5BigIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/ForcepointNGFW/Playbooks/BlockIP-ForcepointNGFW/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 37,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/ForcepointNGFW/Playbooks/BlockIPbyUsername-ForcepointNGFW/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 52,
+   "human_points": 0,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/ForcepointNGFW/Playbooks/BlockURL-ForcepointNGFW/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 36,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/ForcepointNGFW/Playbooks/Enrichment-IP-ForcepointNGFW/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 51,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/ForcepointNGFW/Playbooks/Enrichment-URL-ForcepointNGFW/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 46,
+   "human_points": 0,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/ForcepointNGFW/Playbooks/ResponseOnTeamsBlockIP-ForcepointNGFW/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 83,
+   "human_points": 1,
+   "decision_points": 8,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Fortinet-FortiGate/Playbooks/Fortinet_ResponseOnIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 54,
+   "human_points": 2,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Fortinet-FortiGate/Playbooks/Fortinet_ResponseOnURL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 54,
+   "human_points": 2,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Get-AD4IoTDeviceCVEs/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 17,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-AD4IoTDeviceCVEs/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-ASCRecommendations/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-ASCRecommendations/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-AlertEntitiesEnrichment/Get-AlertEntitiesEnrichment.json",
+   "format": "sentinel_logicapp",
+   "tasks": 30,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-AlertEntitiesEnrichment/UserEnrichment.template.json",
+   "format": "sentinel_logicapp",
+   "tasks": 85,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Get-AlienVault_OTX/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 26,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-CompromisedPasswords/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 43,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-GeoFromIPandTagIncident-EmailAlertBasedonGeo/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-GeoFromIpAndTagIncident/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-GeoFromIpAndTagIncident/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MDATPVulnerabilities/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MDEFileActivityWithin30Mins/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MDEInvestigationPackage/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MDEInvestigationPackage/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MDEProcessActivityWithin30Mins/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MDEStatistics/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MDEStatistics/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MachineData-EDR-SOAR-ActionsOnMachine/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 54,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MerakiData-ConfigurationChanges/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-MerakiData-OrgSecurityEvents/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-Microsoft-Covid19-Indicators/C19ImportToSentinel.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-Microsoft-Covid19-Indicators/C19IndicatorProcessor.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-O365Data/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-Recipients-EmailMessageID-containing-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-SOCActions/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-SentinelAlertsEvidence/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-TenableVlun/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Get-VTURLPositivesComment/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Guardicore-Import-Assets/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Guardicore-Import-Incidents/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Guardicore-ThreatIntel/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/HaveIBeenPwned/Playbooks/HaveIBeenPwned_Enrichment_GetAccountBreaches/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/HaveIBeenPwned/Playbooks/HaveIBeenPwned_Enrichment_GetSiteBreaches/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/HaveIBeenPwned/Playbooks/HaveIBeenPwned_ResponseOnTeams/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 62,
+   "human_points": 1,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/HaveIBeenPwned/Playbooks/HaveIBeenPwned_SendEmail/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 42,
+   "human_points": 1,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/HaveIBeenPwned/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 27,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/HaveIBeenPwned-Email/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/IdentityProtection-EmailResponse/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/IdentityProtection-TeamsBotResponse/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 19,
+   "human_points": 1,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Incident-Assignment-Shifts/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Incident-Email-Notification/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Incident-Status-Sync-To-WDATP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/IncidentUpdate -Get-SentinelAlertsEvidence/IncidentUpdate-GetSentinelAlertsEvidence.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Ingest-CanaryTokens/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Ingest-Prisma/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 2,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Isolate-AzureStorageAccount/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 13,
+   "human_points": 1,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Isolate-AzureVMtoNSG/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 24,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/M365-Security-Posture/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Move-LogAnalytics-to-Storage/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Notify-ASCAlertAzureResource/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 20,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Notify-IncidentClosed/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Notify-IncidentReopened/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Notify-IncidentSeverityChanged/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Notify-Owner/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 2,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/OktaRawLog/template.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Open-ServiceDeskPlusOnDemand-Ticket/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/PaloAlto-PAN-OS/Playbooks/PaloAlto-PAN-OS-BlockIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 51,
+   "human_points": 2,
+   "decision_points": 8,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/PaloAlto-PAN-OS/Playbooks/PaloAlto-PAN-OS-BlockURL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 51,
+   "human_points": 2,
+   "decision_points": 8,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/PaloAlto-PAN-OS/Playbooks/PaloAlto-PAN-OS-GetSystemInfo/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/PaloAlto-PAN-OS/Playbooks/PaloAlto-PAN-OS-GetThreatPCAP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/PaloAlto-PAN-OS/Playbooks/PaloAlto-PAN-OS-GetURLCategoryInfo/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/PaloAlto-Wildfire/Playbooks/Block-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 45,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/PaloAlto-Wildfire/Playbooks/Block-URL-From-Teams/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 52,
+   "human_points": 2,
+   "decision_points": 9,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/PaloAlto-Wildfire/Playbooks/FileHash-Enrichment/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 31,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Post-Message-Slack/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Post-Message-Slack/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Post-Message-Slack/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 2,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Post-Tags-And-Comments-To-Your-IntSights-Account/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 17,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/QuickStart-SentinelTriggers/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 1,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/QuickStart-SentinelTriggers/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 1,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture-Block-IPs-and-Domains-on-Microsoft-Defender-for-Endpoint/RecordedFuture-ImportToDefenderEndpoint.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture-Block-IPs-and-Domains-on-Microsoft-Defender-for-Endpoint/RecordedFuture-TIforDefenderEndpoint.json",
+   "format": "sentinel_logicapp",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_C2_Malware_Detect/RecordedFuture_C2_Malware_Detection_ImportToSentinel.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_C2_Malware_Detect/RecordedFuture_C2_Malware_Detection_IndicatorProcessor.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_COVID19_Related_Domain_Lure_Detect/RecordedFuture_COVID19_Related_Domain_Lure_ImportToSentinel.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_COVID19_Related_Domain_Lure_Detect/RecordedFuture_COVID19_Related_Domain_Lure_IndicatorProcessor.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_Dom_C2_DNS_Name/RecordedFuture_Dom_C2_DNS_Name_ImportToSentinel.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_Dom_C2_DNS_Name/RecordedFuture_Dom_C2_DNS_Name_IndicatorProcessor.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_Generic_Detection/RecordedFuture_Generic_Detection_ImportToSentinel.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_Generic_Detection/RecordedFuture_Generic_Detection_IndicatorProcessor.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_IOC_Enrichment/RecordedFuture_IOC_Enrichment.json",
+   "format": "sentinel_logicapp",
+   "tasks": 29,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_IP_ActCommC2C/RecordedFuture_IP_ActCommC2C_ImportToSentinel.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_IP_ActCommC2C/RecordedFuture_IP_ActCommC2C_IndicatorProcessor.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_IP_Enrichment/RecordedFuture_IP_Enrichment.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_IP_SCF/RecordedFuture_IP_SCF_ImportToDefenderATP.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/RecordedFuture_IP_SCF/RecordedFuture_IP_SCF_IndicatorProcessor.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remediation-Host/CarbonBlack-Remediation-Host/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 36,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-Host/Crowdstrike-Remediation-Host/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 44,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remediation-Host/Remediation-Host-GeneralSchema.json",
+   "format": "sentinel_logicapp",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-Host/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 2,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remediation-IP/AzureFirewall-BlockIP-Nested-Remediation/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remediation-IP/ForcepointNGFW-BlockIP-Nested-Remediation/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 40,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-IP/Fortinet-BlockIP-Nested-Remediation/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 42,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-IP/Meraki-BlockIP-Nested-Remediation/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 49,
+   "human_points": 0,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-IP/PaloAlto-PAN-OS-BlockIP-Remediation/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 38,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-IP/Remediation-IP-GeneralSchema.json",
+   "format": "sentinel_logicapp",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remediation-IP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 2,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remediation-URL/Cisco-Meraki-Remediation-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 35,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-URL/Forcepoint-Remediation-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 34,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-URL/Fortinet-FortiGate-Remediation-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 46,
+   "human_points": 1,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-URL/PaloAlto-PAN-OS-Remediation-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 44,
+   "human_points": 1,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-URL/Zscaler-Remediation-URL/Authentication/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remediation-URL/Zscaler-Remediation-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remediation-URL/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 2,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Remove-MDEAppExecution/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Remove-MDEAppExecution/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Resolve-McasInfrequentCountryAlerts/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 29,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Revoke-AADSignInSessions/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Revoke-AADSignInSessions/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Run-AzureVMPacketCapture/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 17,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Save-NamedLocations/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-AnalyticalRulesHealthNotifications/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-AzCommunicationsSMSMessage/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-AzCommunicationsSMSMessage/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-ConnectorHealthStatus/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-IngestionCostAlert/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-IngestionCostAnomalyAlert/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-Slack-Message-Webhook/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-UrlReport/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-basic-email/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Send-email-with-formatted-incident-report/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Spur-Enrichment/AlertTrigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 45,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Spur-Enrichment/IncidentTrigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 45,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Start-MDEAutomatedInvestigation/alert-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Start-MDEAutomatedInvestigation/incident-trigger/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Sync-IncidentCommentToM365DOnUpdate/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Sync-IncidentsWithJIRA/Add-JiraLinkComment/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Sync-IncidentsWithJIRA/Sync-Status/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Sync-Sentinel-Incident-Comments-To-M365Defender/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Update-BulkIncidents/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Update-NamedLocations-TOR/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Update-VIPUsers-Watchlist-from-AzureAD-Group/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Update-Watchlist-With-NamedLocation/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Watchlist-SendSQLData-Watchlist/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Zscaler/Add-IP-To-Category/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Zscaler/Add-Url-To-Category/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Zscaler/Authentication/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "ms_azure/Zscaler/Get-Sandbox-Report-For-Hash/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Zscaler/Url-Category-Lookup/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/Zscaler-add-Domains-to-URL-Category/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 48,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": true
+  },
+  {
+   "file": "ms_azure/relateAlertsToIncident-basedOnIP/azuredeploy.json",
+   "format": "sentinel_logicapp",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Account_Enrichment_-_Generic_v2.1.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Active_Directory_-_Get_User_Manager_Details.yml",
+   "format": "xsoar_yaml",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Active_Directory_Investigation.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/AutoFocusPolling.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Autofocus_Query_Samples__Sessions_and_Tags.yml",
+   "format": "xsoar_yaml",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 7,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Block_Account_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Block_Domain_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Block_Email_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Block_File_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Block_IP_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 24,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Block_IP_-_Generic_v3.yml",
+   "format": "xsoar_yaml",
+   "tasks": 74,
+   "human_points": 2,
+   "decision_points": 23,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Block_Indicators_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Block_URL_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/CVE_Enrichment_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Calculate_Severity_-_3rd-party_integrations.yml",
+   "format": "xsoar_yaml",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Calculate_Severity_-_Critical_Assets_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 32,
+   "human_points": 0,
+   "decision_points": 9,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Calculate_Severity_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Calculate_Severity_-_Indicators_DBotScore.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Calculate_Severity_-_Standard.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Calculate_Severity_By_Email_Authenticity.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Calculate_Severity_By_Highest_DBotScore.yml",
+   "format": "xsoar_yaml",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Command-Line_Analysis.yml",
+   "format": "xsoar_yaml",
+   "tasks": 24,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Containment_Plan.yml",
+   "format": "xsoar_yaml",
+   "tasks": 49,
+   "human_points": 5,
+   "decision_points": 13,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Context_Polling_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Convert_file_hash_to_corresponding_hashes.yml",
+   "format": "xsoar_yaml",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Create_Zip_from_VirusTotal.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/DBot_Indicator_Enrichment_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Dedup_-_Generic_v3.yml",
+   "format": "xsoar_yaml",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Dedup_-_Generic_v4.yml",
+   "format": "xsoar_yaml",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Default.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 1,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Detonate_File_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 16,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Detonate_File_-_VirusTotal.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Detonate_File_-_VirusTotal_(API_v3).yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Detonate_File_From_URL_-_WildFire.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Detonate_URL_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Detonate_URL_-_VirusTotal_(API_v3).yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Detonate_URL_-_WildFire-v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Detonate_URL_-_WildFire_v2.1.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Domain_Enrichment_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Email_Address_Enrichment_-_Generic_v2.1.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Email_Headers_Check_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Endpoint_Enrichment_-_Generic_v2.1.yml",
+   "format": "xsoar_yaml",
+   "tasks": 25,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Endpoint_Investigation_Plan.yml",
+   "format": "xsoar_yaml",
+   "tasks": 50,
+   "human_points": 0,
+   "decision_points": 15,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Endpoint_Malware_Investigation_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 34,
+   "human_points": 4,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Endpoint_Malware_Investigation_-_Generic_V2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 68,
+   "human_points": 5,
+   "decision_points": 15,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Enrichment_for_Verdict.yml",
+   "format": "xsoar_yaml",
+   "tasks": 32,
+   "human_points": 0,
+   "decision_points": 12,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Entity_Enrichment_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Entity_Enrichment_-_Generic_v3.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Entity_Enrichment_-_Phishing_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Eradication_Plan.yml",
+   "format": "xsoar_yaml",
+   "tasks": 23,
+   "human_points": 3,
+   "decision_points": 7,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Extract_Indicators_From_File_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 20,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Field_Polling_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/File_Enrichment_-_File_reputation.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/File_Enrichment_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/File_Reputation.yml",
+   "format": "xsoar_yaml",
+   "tasks": 21,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/GenericPolling.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 1,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_Email_From_Email_Gateway_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_File_Sample_By_Hash_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_File_Sample_By_Hash_-_Generic_v3.yml",
+   "format": "xsoar_yaml",
+   "tasks": 5,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_File_Sample_From_Path_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_File_Sample_From_Path_-_Generic_V2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_File_Sample_From_Path_-_Generic_V3.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_Original_Email_-_EWS.yml",
+   "format": "xsoar_yaml",
+   "tasks": 12,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Get_Original_Email_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_Original_Email_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_Original_Email_-_Gmail.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Get_endpoint_details_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 17,
+   "human_points": 0,
+   "decision_points": 9,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Get_host_forensics_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Handle_False_Positive_Alerts.yml",
+   "format": "xsoar_yaml",
+   "tasks": 17,
+   "human_points": 1,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Handle_Hello_World_Alert.yml",
+   "format": "xsoar_yaml",
+   "tasks": 2,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/HelloWorld_Scan.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/IP_Enrichment_-_External_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 15,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/IP_Enrichment_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/IP_Enrichment_-_Internal_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Isolate_Endpoint_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Isolate_Endpoint_-_Generic_V2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Malware_Investigation_-_Manual.yml",
+   "format": "xsoar_yaml",
+   "tasks": 91,
+   "human_points": 6,
+   "decision_points": 6,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Mitre_Attack_-_Extract_Technique_Information_From_ID.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Phishing_-_Core.yml",
+   "format": "xsoar_yaml",
+   "tasks": 19,
+   "human_points": 1,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Phishing_-_Core_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 19,
+   "human_points": 1,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Phishing_-_Generic_v3.yml",
+   "format": "xsoar_yaml",
+   "tasks": 62,
+   "human_points": 1,
+   "decision_points": 14,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Phishing_Investigation_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 51,
+   "human_points": 1,
+   "decision_points": 8,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Phishing_Playbook_-_Manual.yml",
+   "format": "xsoar_yaml",
+   "tasks": 36,
+   "human_points": 5,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Process_Email_-_Core.yml",
+   "format": "xsoar_yaml",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Process_Email_-_Core_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 19,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Process_Email_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 24,
+   "human_points": 0,
+   "decision_points": 6,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Process_Email_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 41,
+   "human_points": 1,
+   "decision_points": 9,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Process_Microsoft's_Anti-Spam_Headers.yml",
+   "format": "xsoar_yaml",
+   "tasks": 32,
+   "human_points": 0,
+   "decision_points": 9,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Recovery_Plan.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Retrieve_File_from_Endpoint_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Retrieve_File_from_Endpoint_-_Generic_V2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Retrieve_File_from_Endpoint_-_Generic_V3.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Search_And_Delete_Emails_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 3,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Search_And_Delete_Emails_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 17,
+   "human_points": 1,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Search_Endpoint_by_CVE_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 17,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Search_Endpoints_By_Hash_-_Generic_V2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 11,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Send_Investigation_Summary_Reports.yml",
+   "format": "xsoar_yaml",
+   "tasks": 7,
+   "human_points": 0,
+   "decision_points": 1,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Send_Investigation_Summary_Reports_Job.yml",
+   "format": "xsoar_yaml",
+   "tasks": 4,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/TIM_-_Add_All_Indicator_Types_To_SIEM.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Add_Bad_Hash_Indicators_To_SIEM.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Add_Domain_Indicators_To_SIEM.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Add_IP_Indicators_To_SIEM.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Add_Url_Indicators_To_SIEM.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Indicator_Auto_Processing.yml",
+   "format": "xsoar_yaml",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Indicators_Exclusion_By_Related_Incidents.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_CIDR_Indicators_By_Size.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Domain_Age_With_Whois.yml",
+   "format": "xsoar_yaml",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Domain_Registrant_With_Whois.yml",
+   "format": "xsoar_yaml",
+   "tasks": 18,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Domains_With_Whois.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_File_Indicators_With_File_Hash_Type.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Indicators_-_Fully_Automated.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Indicators_-_Manual_Review.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Indicators_Against_Approved_Hash_List.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Indicators_Against_Business_Partners_Domains_List.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Indicators_Against_Business_Partners_IP_List.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Indicators_Against_Business_Partners_URL_List.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Process_Indicators_Against_Organizations_External_IP_List.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Review_Indicators_Manually.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 2,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/TIM_-_Review_Indicators_Manually_For_Whitelisting.yml",
+   "format": "xsoar_yaml",
+   "tasks": 13,
+   "human_points": 2,
+   "decision_points": 4,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/TIM_-_Run_Enrichment_For_All_Indicator_Types.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Run_Enrichment_For_Domain_Indicators.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Run_Enrichment_For_Hash_Indicators.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Run_Enrichment_For_IP_Indicators.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Run_Enrichment_For_Url_Indicators.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 8,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/TIM_-_Update_Indicators_Organizational_External_IP_Tag.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Tag_massive_and_internal_IOCs_to_avoid_EDL_listing.yml",
+   "format": "xsoar_yaml",
+   "tasks": 22,
+   "human_points": 0,
+   "decision_points": 3,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Threat_Hunting_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 6,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/URL_Enrichment_-_Generic_v2.yml",
+   "format": "xsoar_yaml",
+   "tasks": 14,
+   "human_points": 0,
+   "decision_points": 5,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/Unisolate_Endpoint_-_Generic.yml",
+   "format": "xsoar_yaml",
+   "tasks": 8,
+   "human_points": 0,
+   "decision_points": 0,
+   "containment_keyword": true
+  },
+  {
+   "file": "xsoar/Wait_Until_Datetime.yml",
+   "format": "xsoar_yaml",
+   "tasks": 9,
+   "human_points": 0,
+   "decision_points": 2,
+   "containment_keyword": false
+  },
+  {
+   "file": "xsoar/WildFire_-_Detonate_file.yml",
+   "format": "xsoar_yaml",
+   "tasks": 10,
+   "human_points": 0,
+   "decision_points": 4,
+   "containment_keyword": true
+  }
+ ]
+}

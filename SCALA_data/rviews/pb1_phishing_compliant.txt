@@ -1,0 +1,31 @@
+PLAYBOOK: Phishing Response - Compliant  [xsoar_yaml]  (10 tasks)
+SOURCE:   seeded/pb1_phishing_compliant.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) Start
+  [1] (regular) Triage and classify severity  | tool/op: AssignIncidentSeverity  | Assess reported email, assign severity and phishing category before response.
+  [2] (regular) Collect evidence and preserve email artefacts  | tool/op: PreserveEmailEvidence  | Save original email, headers, attachments and URLs to the incident record before any remed
+  [3] (regular) Collect authentication and mail gateway logs  | tool/op: CollectAuditLogs  | Pull relevant audit logs for the affected mailbox and gateway.
+  [4] (condition) Analyst approval - quarantine mailbox and block sender  | Manual decision by Tier 2 analyst (owner - SOC Tier 2) whether to quarantine the mailbox a
+  [5] (regular) Quarantine mailbox and block sender  | tool/op: QuarantineMailbox  | Approved containment - quarantine affected mailbox, block sender domain at gateway.
+  [6] (regular) Verify no further malicious mail delivered  | tool/op: RescanMailboxes  | Re-scan mailboxes to confirm eradication before restoring normal mail flow.
+  [7] (regular) Notify incident manager and affected user  | tool/op: SendNotifications  | Send notification to incident manager and inform the affected user of outcome.
+  [8] (regular) Document actions in incident record  | tool/op: UpdateIncidentRecord  | Write all actions taken, timestamps and decisions to the case management system.
+  [9] (regular) Post-incident review and lessons learned  | tool/op: CreateLessonsLearnedTask  | Schedule lessons-learned review and record playbook improvement suggestions.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 1
+  1 -> 2
+  2 -> 3
+  3 -> 4
+  4 -> 5, 7
+  5 -> 6
+  6 -> 7
+  7 -> 8
+  8 -> 9
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [4] condition: Analyst approval - quarantine mailbox and block sender -> MANUAL candidate (unscripted, no conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [4] Analyst approval - quarantine mailbox and block sender: exits -> 5, 7

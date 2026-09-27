@@ -1,0 +1,47 @@
+PLAYBOOK: Search And Delete Emails - Generic v2  [xsoar_yaml]  (16 tasks)
+SOURCE:   real_derived/rd3_search_delete_auto_all_mailboxes.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) (unnamed)
+  [1] (playbook) Search And Delete Emails - EWS  | This playbook searches EWS to identify and delete emails with similar attributes of a mali
+  [2] (title) Done
+  [3] (playbook) O365 - Security And Compliance - Search And Delete  | This playbook performs the following steps:
+1. Creates a compliance search.
+2. Starts a co
+  [4] (condition) In what integration should emails be searched and deleted?  | Checks which integration and playbook should run the search and delete action, by checking
+  [5] (condition) From where should emails be searched and deleted?  | Checks whether a target to search and delete emails from was specified. Determined by the 
+  [7] (regular) Set all mailboxes to be searched  | tool/op: Set  | Set a value in context under the key you entered.
+  [8] (regular) Set the "email to" as the mailbox to search  | tool/op: Set  | Set a value in context under the key you entered.
+  [9] (title) Use EWS
+  [10] (title) Use EWS
+  [11] (title) Use O365
+  [12] (title) Use O365
+  [13] (title) Use Gmail
+  [14] (playbook) Search And Delete Emails - Gmail
+  [15] (title) Agari Phishing Defense
+  [16] (regular) Search And Delete Emails - Agari Phishing Defense  | tool/op: Agari Phishing Defense|||apd-remediate-message  | Remediates the suspected message.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 4
+  1 -> 2
+  10 -> 1
+  11 -> 5
+  12 -> 5
+  13 -> 14
+  14 -> 2
+  15 -> 16
+  16 -> 2
+  3 -> 2
+  4 -> 2, 15, 9, 12, 13, 10, 11
+  5 -> 7, 7, 8
+  7 -> 3
+  8 -> 3
+  9 -> 1
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [4] condition: In what integration should emails be searched and deleted? -> AUTOMATED value-check (conditions array)
+  [5] condition: From where should emails be searched and deleted? -> AUTOMATED value-check (conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [4] In what integration should emails be searched and deleted?: exits -> 2 (terminal title 'Done' - no escalation), 15, 9, 12, 13, 10, 11
+  [5] From where should emails be searched and deleted?: exits -> 7, 7, 8

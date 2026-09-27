@@ -1,0 +1,243 @@
+{
+  "model": "moonshotai/kimi-k2",
+  "prompt_version": "v2-batched",
+  "kb_backend": null,
+  "playbooks_scored": 10,
+  "rescored_against": "ground_truth.json",
+  "micro_precision": 0.6447,
+  "micro_recall": 0.9245,
+  "micro_f1": 0.7597,
+  "tp": 49,
+  "fp": 27,
+  "fn": 4,
+  "per_playbook": [
+    {
+      "file": "rd1_tim_manual_review_unmodified.yml",
+      "predicted": [
+        "C03",
+        "C04",
+        "C06",
+        "C12"
+      ],
+      "actual": [],
+      "precision": 0.0,
+      "recall": 1.0,
+      "seconds": 21.6
+    },
+    {
+      "file": "rd2_eradication_plan_no_gates.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.8889,
+      "recall": 1.0,
+      "seconds": 23.2
+    },
+    {
+      "file": "rd3_search_delete_auto_all_mailboxes.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.8889,
+      "recall": 0.8889,
+      "seconds": 22.7
+    },
+    {
+      "file": "rd4_handle_fp_full_auto.yml",
+      "predicted": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.4286,
+      "recall": 0.75,
+      "seconds": 97.8
+    },
+    {
+      "file": "rd5_Block_Account_-_Generic.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.7778,
+      "recall": 1.0,
+      "seconds": 26.9
+    },
+    {
+      "file": "rd6_Active_Directory_Investigation.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C06"
+      ],
+      "precision": 0.125,
+      "recall": 1.0,
+      "seconds": 25.2
+    },
+    {
+      "file": "rd7_Block_IP_-_Generic_v2.yml",
+      "predicted": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.8889,
+      "recall": 1.0,
+      "seconds": 24.9
+    },
+    {
+      "file": "rd8_BlockADOnPremUser.json",
+      "predicted": [
+        "C01",
+        "C02",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C05",
+        "C06",
+        "C10"
+      ],
+      "precision": 0.5714,
+      "recall": 1.0,
+      "seconds": 19.6
+    },
+    {
+      "file": "rd9_Forcepoint-Block-IP-Nested-Remediation.json",
+      "predicted": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.75,
+      "recall": 0.75,
+      "seconds": 19.2
+    },
+    {
+      "file": "rd10_CiscoASA-CreateInboundAccessRuleOnInterf.json",
+      "predicted": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "precision": 0.6667,
+      "recall": 1.0,
+      "seconds": 21.4
+    }
+  ]
+}

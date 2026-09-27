@@ -1,0 +1,31 @@
+PLAYBOOK: TIM - Process Indicators - Manual Review  [xsoar_yaml]  (8 tasks)
+SOURCE:   real_derived/rd1_tim_manual_review_unmodified.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) (unnamed)
+  [2] (condition) Are there query results?
+  [3] (title) Done
+  [4] (regular) Create Process Indicators Manually incident  | tool/op: Builtin|||createNewIncident  | Creates an incident that includes all of the indicators that must be manually reviewed.
+  [5] (playbook) TIM - Indicator Auto Processing  | This playbook uses several sub playbooks to process and tag indicators, which is used to i
+  [6] (regular) Tag indicators as pending review  | tool/op: Builtin|||appendIndicatorField  | Adds the 'pending_review' tag to the indicators.
+  [7] (condition) Are there processed indicators to tag for manual review?
+  [8] (condition) Open manual review incident?
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 2
+  2 -> 3, 5
+  4 -> 3
+  5 -> 7
+  6 -> 8
+  7 -> 3, 6
+  8 -> 4, 3
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [2] condition: Are there query results? -> AUTOMATED value-check (conditions array)
+  [7] condition: Are there processed indicators to tag for manual review? -> AUTOMATED value-check (conditions array)
+  [8] condition: Open manual review incident? -> AUTOMATED value-check (conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [2] Are there query results?: exits -> 3 (terminal title 'Done' - no escalation), 5
+  [7] Are there processed indicators to tag for manual review?: exits -> 3 (terminal title 'Done' - no escalation), 6
+  [8] Open manual review incident?: exits -> 4, 3 (terminal title 'Done' - no escalation)

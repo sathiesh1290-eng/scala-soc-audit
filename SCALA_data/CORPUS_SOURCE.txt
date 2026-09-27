@@ -1,0 +1,41 @@
+SCALA playbook corpus: source and provenance
+============================================
+
+The playbook corpus is not included in this package. It is the public collection
+"awesome-playbooks", assembled for:
+
+  Schlette, D. et al. (2024) 'Do you play it by the books? A study on incident
+  response playbooks and influencing factors', 2024 IEEE Symposium on Security and
+  Privacy (SP). IEEE, pp. 3625-3643. doi:10.1109/SP54263.2024.00060
+
+Repository:      https://github.com/luduslibrum/awesome-playbooks
+Clone command:   git clone https://github.com/luduslibrum/awesome-playbooks.git
+
+Revision used by SCALA
+----------------------
+Commit hash: bc0f6065d79f5330ad6c6a7e4cfcd2e31cce511f (17 July 2023)
+Clone date: 26 September 2026 (the same revision was used for all results)
+
+Anyone cloning that commit obtains the identical 2,854 files; a later revision may
+contain more or different playbooks and would change the counts below.
+
+What SCALA used from it
+-----------------------
+Files in the collection at the recorded revision:   2,854
+Parsed by SCALA (structure verified against raw):   472
+    playbooks/xsoar and playbooks/demisto  (Cortex XSOAR / Demisto YAML)   189
+    playbooks/ms_azure                     (Microsoft Sentinel ARM JSON)    193
+    playbooks/cisa and other BPMN files    (BPMN 2.0 XML)                    90
+The remaining files are documentation, images, or formats that embed their logic in
+program code (for example Splunk SOAR, Shuffle, Tines) and were not parsed. The full
+per-file disposition is in inventory/SCALA_Playbook_Inventory_472.xlsx.
+
+The ten reference playbooks in the code bundle (real_derived/) are copies of files
+from playbooks/xsoar and playbooks/ms_azure; their source paths are listed in
+real_derived/MODIFICATION_LOG.md.
+
+Why the corpus is not redistributed
+-----------------------------------
+The files belong to their vendors and to the collection's maintainers and carry
+their own licences. Pointing at the repository and the commit hash gives anyone
+the identical corpus without SCALA passing on other people's content.

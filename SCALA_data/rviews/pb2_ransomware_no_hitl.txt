@@ -1,0 +1,25 @@
+PLAYBOOK: Ransomware Containment - Fully Automated  [xsoar_yaml]  (7 tasks)
+SOURCE:   seeded/pb2_ransomware_no_hitl.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) Start
+  [1] (regular) Isolate all affected hosts  | tool/op: IsolateEndpoints  | Immediately network-isolate every host flagged by the EDR detection, org-wide.
+  [2] (regular) Delete encrypted files and ransom notes  | tool/op: DeleteMaliciousFiles  | Remove encrypted files and ransom note artefacts from affected shares.
+  [3] (regular) Reimage affected endpoints  | tool/op: ReimageHosts  | Trigger automated reimaging of all isolated endpoints.
+  [4] (regular) Restore hosts to network  | tool/op: RestoreNetworkAccess  | Re-join reimaged hosts to the network and re-enable user access.
+  [5] (regular) Notify incident manager  | tool/op: SendNotifications  | Send summary notification to the incident manager mailbox.
+  [6] (regular) Document actions in incident record  | tool/op: UpdateIncidentRecord  | Record actions taken in the case management system.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 1
+  1 -> 2
+  2 -> 3
+  3 -> 4
+  4 -> 5
+  5 -> 6
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  no decision or collection tasks -> fully automated path
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  no branching: single linear path

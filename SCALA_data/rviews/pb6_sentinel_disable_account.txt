@@ -1,0 +1,21 @@
+PLAYBOOK: Sentinel-DisableCompromisedUser  [sentinel_logicapp]  (5 tasks)
+SOURCE:   seeded/pb6_sentinel_disable_account.json
+
+R1 - TASK INVENTORY (what actions exist)
+  [trigger:Microsoft_Sentinel_incident] (trigger/ApiConnectionWebhook) Microsoft_Sentinel_incident
+  [Get_incident_entities] (ApiConnection) Get_incident_entities  | tool/op: azuresentinel /entities/account
+  [Disable_user_account] (ApiConnection) Disable_user_account  | tool/op: azuread /v1.0/users/@{triggerBody()?['object']?['properties']?['relatedEntities']}/accountEnabled
+  [Revoke_signin_sessions] (ApiConnection) Revoke_signin_sessions  | tool/op: azuread /v1.0/users/revokeSignInSessions
+  [Post_message_to_SOC_channel] (ApiConnection) Post_message_to_SOC_channel  | tool/op: teams /v3/beta/teams/conversation/message
+
+R2 - CONTROL FLOW (successor edges)
+  Disable_user_account -> Revoke_signin_sessions
+  Get_incident_entities -> Disable_user_account
+  Revoke_signin_sessions -> Post_message_to_SOC_channel
+  trigger:Microsoft_Sentinel_incident -> Get_incident_entities
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  approval connectors: NONE -> no human decision point in this playbook
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  no branching: single linear path

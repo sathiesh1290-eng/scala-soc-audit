@@ -1,0 +1,31 @@
+PLAYBOOK: BlockADOnPremUser  [sentinel_logicapp]  (11 tasks)
+SOURCE:   real_derived/rd8_BlockADOnPremUser.json
+
+R1 - TASK INVENTORY (what actions exist)
+  [trigger:Microsoft_Sentinel_alert] (trigger/ApiConnectionWebhook) Microsoft_Sentinel_alert
+  [Alert_-_Get_incident] (ApiConnection) Alert_-_Get_incident
+  [Entities_-_Get_Accounts] (ApiConnection) Entities_-_Get_Accounts
+  [For_each] (Foreach) For_each
+  [For_each/Condition] (If) Condition
+  [For_each/Condition/Add_comment_to_incident_(V3)] (ApiConnection) Add_comment_to_incident_(V3)
+  [For_each/Condition/Send_an_email_(V2)] (ApiConnection) Send_an_email_(V2)
+  [For_each/Condition/else/Send_an_email_(V2)_2] (ApiConnection) Send_an_email_(V2)_2
+  [For_each/Create_job] (ApiConnection) Create_job
+  [For_each/Disable_Account_on_Azure_AD] (ApiConnection) Disable_Account_on_Azure_AD
+  [For_each/Parse_JSON] (ParseJson) Parse_JSON
+
+R2 - CONTROL FLOW (successor edges)
+  Alert_-_Get_incident -> Entities_-_Get_Accounts
+  Entities_-_Get_Accounts -> For_each
+  For_each/Condition/Send_an_email_(V2) -> For_each/Condition/Add_comment_to_incident_(V3)
+  For_each/Create_job -> For_each/Condition
+  For_each/Disable_Account_on_Azure_AD -> For_each/Create_job
+  For_each/Parse_JSON -> For_each/Disable_Account_on_Azure_AD
+  trigger:Microsoft_Sentinel_alert -> Alert_-_Get_incident
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [For_each/Condition] If -> AUTOMATED value-check (Logic App expression)
+  approval connectors: NONE -> no human decision point in this playbook
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [For_each/Condition] true-branch -> For_each/Condition/Add_comment_to_incident_(V3), For_each/Condition/Send_an_email_(V2); false-branch -> For_each/Condition/else/Send_an_email_(V2)_2

@@ -1,0 +1,23 @@
+PLAYBOOK: Brute Force Account Response  [xsoar_yaml]  (6 tasks)
+SOURCE:   seeded/pb3_bruteforce_no_logging.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) Start
+  [1] (regular) Triage alert severity  | tool/op: AssignIncidentSeverity  | Classify severity based on account privilege and attempt volume.
+  [2] (condition) Analyst approval - reset credentials and block IP  | Manual approval by SOC analyst (owner - SOC Tier 1) before account actions.
+  [3] (regular) Force password reset and revoke sessions  | tool/op: ForcePasswordReset  | Reset the targeted account credentials and revoke active sessions.
+  [4] (regular) Block source IPs at firewall  | tool/op: BlockIPs  | Add attacking source IPs to the firewall block list.
+  [5] (regular) Notify account owner  | tool/op: SendNotifications  | Inform the affected user and their manager of the action taken.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 1
+  1 -> 2
+  2 -> 3, 5
+  3 -> 4
+  4 -> 5
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [2] condition: Analyst approval - reset credentials and block IP -> MANUAL candidate (unscripted, no conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [2] Analyst approval - reset credentials and block IP: exits -> 3, 5

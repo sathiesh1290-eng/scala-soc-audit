@@ -1,0 +1,43 @@
+PLAYBOOK: Eradication Plan  [xsoar_yaml]  (15 tasks)
+SOURCE:   real_derived/rd2_eradication_plan_no_gates.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) (unnamed)
+  [20] (regular) Auto password reset  | tool/op: |||ad-expire-password  | Invalidates the password of an Active Directory user.
+  [25] (title) Done - Password Reset
+  [27] (regular) Auto file deletion  | tool/op: |||core-run-script-delete-file  | Initiates a new endpoint script execution to delete the specified file.
+  [29] (regular) Auto process termination  | tool/op: |||core-run-script-kill-process  | Initiates a new endpoint script execution kill process.
+  [33] (title) Done - File Deletion
+  [34] (title) Done - Process Termination
+  [35] (regular) Password reset  | tool/op: |||ad-expire-password  | Invalidates the password of an Active Directory user.
+  [36] (condition) Check user answer  | Check the user's answer.
+  [37] (condition) Check user answer  | Check the user's answer.
+  [38] (condition) Check user answer  | Check the user's answer.
+  [39] (regular) Set selected processes to terminate  | tool/op: Set  | Set a value in context under the key you entered.
+  [40] (regular) Set selected files to delete  | tool/op: Set  | Set a value in context under the key you entered.
+  [41] (regular) Set selected users to reset password  | tool/op: Set  | Set a value in context under the key you entered.
+  [42] (condition) Is Active Directory Query v2 enabled?  | tool/op: IsIntegrationAvailable  | Returns 'yes' if integration brand is available. Otherwise returns 'no'
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 27, 29, 42
+  20 -> 25
+  27 -> 33
+  29 -> 34
+  35 -> 25
+  36 -> 25, 41
+  37 -> 33, 40
+  38 -> 34, 39
+  41 -> 35
+  42 -> 25, 20
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [36] condition: Check user answer -> AUTOMATED value-check (conditions array)
+  [37] condition: Check user answer -> AUTOMATED value-check (conditions array)
+  [38] condition: Check user answer -> AUTOMATED value-check (conditions array)
+  [42] condition: Is Active Directory Query v2 enabled? -> AUTOMATED (scripted)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [36] Check user answer: exits -> 25 (terminal title 'Done - Password Reset' - no escalation), 41
+  [37] Check user answer: exits -> 33 (terminal title 'Done - File Deletion' - no escalation), 40
+  [38] Check user answer: exits -> 34 (terminal title 'Done - Process Termination' - no escalation), 39
+  [42] Is Active Directory Query v2 enabled?: exits -> 25 (terminal title 'Done - Password Reset' - no escalation), 20

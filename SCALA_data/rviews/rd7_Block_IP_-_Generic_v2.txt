@@ -1,0 +1,73 @@
+PLAYBOOK: Block IP - Generic v2  [xsoar_yaml]  (24 tasks)
+SOURCE:   real_derived/rd7_Block_IP_-_Generic_v2.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) (unnamed)
+  [2] (title) Done
+  [5] (title) Block IPs
+  [6] (regular) Block IP with Check Point Firewall  | tool/op: |||checkpoint-block-ip  | Block the IPs using Check Point Firewall
+  [7] (condition) Is Check Point Firewall enabled?  | Verify that there is a valid instance of Check Point Firewall enabled.
+  [8] (condition) Is there an IP to block?  | Verify that the playbook input includes at least one IP to block.
+  [11] (playbook) Add Indicator to Miner - Palo Alto MineMeld
+  [12] (condition) Is Zscaler enabled?  | Verify that there is a valid instance of Zscaler enabled.
+  [13] (regular) Block IP with Zscaler  | tool/op: Zscaler|||zscaler-blacklist-ip  | Block the IPs using Zscaler.
+  [14] (playbook) PAN-OS - Block IP - Custom Block Rule
+  [15] (playbook) PAN-OS - Block IP - Static Address Group
+  [16] (playbook) PAN-OS - Block IP and URL - External Dynamic List
+  [17] (title) PAN-OS
+  [18] (title) CheckPoint FW
+  [19] (title) MineMeld
+  [20] (title) Zscaler
+  [21] (playbook) PAN-OS DAG Configuration
+  [22] (condition) Use Custom Block Rules?  | Verify if custom block rule playbook input is set to true or not.
+  [23] (condition) Use Static Address Group?  | Verify if there is a static address group name set as a playbook input.
+  [24] (condition) Use External Dynamic List?  | Verify if there is an EDL Server IP as a playbook input.
+  [25] (condition) Use Dynamic Address Group?  | Verify if there is a dynamic address group name set as a playbook input.
+  [26] (title) Fortinet
+  [27] (condition) Is FortiGate enabled?  | Verify that there is a valid instance of FortiGate enabled.
+  [28] (regular) FortiGate Ban IP   | tool/op: |||fortigate-ban-ip  | Adds IP addresses to the banned list.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 8
+  11 -> 2
+  12 -> 2, 13
+  13 -> 2
+  14 -> 2
+  15 -> 2
+  16 -> 2
+  17 -> 22, 23, 24, 25
+  18 -> 7
+  19 -> 11
+  20 -> 12
+  21 -> 2
+  22 -> 2, 14
+  23 -> 2, 15
+  24 -> 2, 16
+  25 -> 2, 21
+  26 -> 27
+  27 -> 2, 28
+  28 -> 2
+  5 -> 17, 18, 19, 20, 26
+  6 -> 2
+  7 -> 2, 6
+  8 -> 2, 5
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [7] condition: Is Check Point Firewall enabled? -> AUTOMATED value-check (conditions array)
+  [8] condition: Is there an IP to block? -> AUTOMATED value-check (conditions array)
+  [12] condition: Is Zscaler enabled? -> AUTOMATED value-check (conditions array)
+  [22] condition: Use Custom Block Rules? -> AUTOMATED value-check (conditions array)
+  [23] condition: Use Static Address Group? -> AUTOMATED value-check (conditions array)
+  [24] condition: Use External Dynamic List? -> AUTOMATED value-check (conditions array)
+  [25] condition: Use Dynamic Address Group? -> AUTOMATED value-check (conditions array)
+  [27] condition: Is FortiGate enabled? -> AUTOMATED value-check (conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [7] Is Check Point Firewall enabled?: exits -> 2 (terminal title 'Done' - no escalation), 6
+  [8] Is there an IP to block?: exits -> 2 (terminal title 'Done' - no escalation), 5
+  [12] Is Zscaler enabled?: exits -> 2 (terminal title 'Done' - no escalation), 13
+  [22] Use Custom Block Rules?: exits -> 2 (terminal title 'Done' - no escalation), 14
+  [23] Use Static Address Group?: exits -> 2 (terminal title 'Done' - no escalation), 15
+  [24] Use External Dynamic List?: exits -> 2 (terminal title 'Done' - no escalation), 16
+  [25] Use Dynamic Address Group?: exits -> 2 (terminal title 'Done' - no escalation), 21
+  [27] Is FortiGate enabled?: exits -> 2 (terminal title 'Done' - no escalation), 28

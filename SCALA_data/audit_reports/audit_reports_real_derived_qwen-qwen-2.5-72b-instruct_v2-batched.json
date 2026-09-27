@@ -1,0 +1,1292 @@
+[
+  {
+    "playbook_file": "rd1_tim_manual_review_unmodified.yml",
+    "playbook_name": "TIM - Process Indicators - Manual Review",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that clearly state their purpose.",
+        "recommendation": "Continue to use clear and descriptive task names and descriptions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks that log or document actions taken during the incident response.",
+        "recommendation": "Add tasks to log and document all actions taken during the incident response.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C05",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not perform triage, severity assessment, or classification of security events.",
+        "recommendation": "Consider adding a triage step if the playbook is expanded to include more complex incident handling.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to stakeholders beyond the SOC.",
+        "recommendation": "If the playbook is expanded to include stakeholder notifications, ensure they are clearly defined.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "not_applicable",
+        "severity": "low",
+        "rationale": "The playbook does not include a post-incident review or lessons-learned activity.",
+        "recommendation": "Consider adding a post-incident review step to capture knowledge gained from incidents.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C01",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform disruptive or destructive actions that require explicit human authorization.",
+        "recommendation": "If such actions are added, ensure they are gated by human approval.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not capture forensic evidence before any task that removes malware, reimages hosts, or deletes artifacts.",
+        "recommendation": "If forensic evidence collection is needed, add a step to capture it before any destructive actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "not_applicable",
+        "severity": "low",
+        "rationale": "The playbook does not include manual decision points that require ownership or role identification.",
+        "recommendation": "If manual decisions are added, ensure the responsible role or owner is clearly identified.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add tasks to collect and preserve audit logs relevant to the incident.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not perform recovery or restoration steps that require verification of eradication.",
+        "recommendation": "If recovery steps are added, ensure they include verification of threat removal.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "satisfied",
+        "severity": "medium",
+        "rationale": "The playbook routes to a human analyst for manual review of indicators.",
+        "recommendation": "Continue to ensure that uncertain branches route to a human analyst.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform wide-scope actions that require stronger authorization.",
+        "recommendation": "If wide-scope actions are added, ensure they are gated more strictly than single-host or single-user actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd2_eradication_plan_no_gates.yml",
+    "playbook_name": "Eradication Plan",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C01",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook lacks a human approval or decision gate before tasks that disable accounts, delete files, or terminate processes.",
+        "recommendation": "Add a human approval step before disruptive actions such as password resets, file deletions, and process terminations.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that clearly state their purpose.",
+        "recommendation": "Continue to use clear and descriptive task names and descriptions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include steps to verify eradication before re-enabling accounts or restoring services.",
+        "recommendation": "Add verification steps to ensure the threat has been removed before re-enabling accounts or restoring services.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not capture forensic evidence before performing eradication actions.",
+        "recommendation": "Add tasks to collect and preserve forensic evidence before executing eradication actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks to log and document actions taken during incident response.",
+        "recommendation": "Add logging and documentation tasks to ensure a reviewable record of the response exists.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not route uncertain branches to a human analyst or escalation task.",
+        "recommendation": "Add escalation paths for uncertain or failure branches to ensure human review.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage, severity-assessment, or classification step before response actions.",
+        "recommendation": "Add a triage and severity-assessment step before executing response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include a closing step for post-incident review or lessons learned.",
+        "recommendation": "Add a post-incident review step to capture knowledge and improve the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to stakeholders beyond the SOC.",
+        "recommendation": "Add tasks to notify relevant stakeholders such as incident managers, system owners, and legal teams.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add tasks to collect and retain audit logs relevant to the incident.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not indicate ownership or the role responsible for manual decision points.",
+        "recommendation": "Clearly identify the responsible role or owner for manual decision points in the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform wide-scope actions affecting many users or systems.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd3_search_delete_auto_all_mailboxes.yml",
+    "playbook_name": "Search And Delete Emails - Generic v2",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that clearly state their purpose.",
+        "recommendation": "Continue to ensure all tasks have clear and descriptive names.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not include steps to capture forensic evidence before deleting emails.",
+        "recommendation": "Add a step to capture forensic evidence (e.g., email content, metadata) before deletion.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not involve re-enabling accounts, unblocking indicators, or restoring hosts.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C01",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not include a human approval or decision gate before deleting emails.",
+        "recommendation": "Add a human approval step before the deletion of emails.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage, severity-assessment, or classification step before response actions.",
+        "recommendation": "Add a triage step to assess and categorize the severity and scope of the incident.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks to log and document actions taken.",
+        "recommendation": "Add logging tasks to record actions taken and update the incident record.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include steps to collect and retain relevant audit logs.",
+        "recommendation": "Add steps to collect and retain audit logs related to the incident.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include a closing step for post-incident review or lessons learned.",
+        "recommendation": "Add a post-incident review step to capture lessons learned and improve the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not define escalation paths for uncertain or unresolved incidents.",
+        "recommendation": "Add escalation paths to route incidents to human analysts if automated handling fails.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to relevant stakeholders.",
+        "recommendation": "Add notification tasks to inform relevant stakeholders during incident handling.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not indicate ownership or the role responsible for manual decision points.",
+        "recommendation": "Specify the responsible role or owner for manual decision points.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not gate wide-scope actions more strictly than single-host or single-user actions.",
+        "recommendation": "Implement stricter authorization for wide-scope actions, such as organization-wide email deletions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd4_handle_fp_full_auto.yml",
+    "playbook_name": "Handle False Positive Alerts",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage, severity-assessment, or classification step before response actions.",
+        "recommendation": "Add a triage step to assess and categorize the severity, scope, and type of the alert before executing response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that clearly state their purpose.",
+        "recommendation": "Continue to ensure all tasks have clear and descriptive names and descriptions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C01",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform disruptive or destructive response actions such as isolating hosts, disabling accounts, deleting files, or blocking business services.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks to collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add tasks to collect and preserve relevant audit logs, such as authentication logs, endpoint telemetry, and network logs.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks that record actions taken, update the incident record, or write to a case management system.",
+        "recommendation": "Add tasks to log and document actions taken during the response process.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not perform recovery or restoration steps that require verification of threat removal.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to stakeholders beyond the SOC.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "not_applicable",
+        "severity": "low",
+        "rationale": "The playbook does not have failure or uncertain branches that require routing to a human analyst.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include a closing step for post-incident review, lessons learned, or playbook improvement.",
+        "recommendation": "Add a closing step to capture lessons learned and improve the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform actions that could destroy forensic evidence.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "not_applicable",
+        "severity": "low",
+        "rationale": "The playbook does not have manual decision points that require identifying ownership or roles.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform wide-scope actions that require stronger authorization.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd5_Block_Account_-_Generic.yml",
+    "playbook_name": "Block Account - Generic",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C01",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not include a human approval or decision gate before disabling accounts or applying tags.",
+        "recommendation": "Add a human approval step before tasks that disable accounts or apply tags.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include any steps to re-enable accounts, unblock indicators, or restore hosts.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that state what the step does and why.",
+        "recommendation": "Continue to use clear and descriptive task names and descriptions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage, severity-assessment, or classification step before response actions execute.",
+        "recommendation": "Add a triage and severity-assessment step before executing response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not capture forensic evidence before disabling accounts or applying tags.",
+        "recommendation": "Add a step to capture forensic evidence before performing disruptive actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks that record actions taken or update the incident record.",
+        "recommendation": "Add tasks to log and document actions taken during the playbook execution.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to stakeholders beyond the SOC.",
+        "recommendation": "Add tasks to notify relevant stakeholders, such as the incident manager, system owners, and legal teams.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include a closing step for post-incident review or lessons learned.",
+        "recommendation": "Add a closing step to capture knowledge gained from the incident for future improvement.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not indicate ownership or the role responsible for manual decision points.",
+        "recommendation": "Specify the responsible role or owner for any manual decision points in the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add tasks to collect and retain relevant audit logs, such as authentication logs and network logs.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not gate wide-scope actions more strictly than single-user actions.",
+        "recommendation": "Implement stricter authorization for wide-scope actions, such as org-wide blocks or mass account actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not define escalation paths for when automated handling cannot resolve or classify an incident.",
+        "recommendation": "Add escalation paths to route incidents to a human analyst when automated handling fails or is uncertain.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd6_Active_Directory_Investigation.yml",
+    "playbook_name": "Active Directory Investigation",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C01",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not include a human approval step before disabling accounts.",
+        "recommendation": "Add a human approval step before the task that disables accounts.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage or severity-assessment step before response actions.",
+        "recommendation": "Add a triage or severity-assessment step before executing response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include re-enabling accounts or restoring services.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to stakeholders beyond the SOC.",
+        "recommendation": "Add tasks to notify relevant stakeholders, such as the incident manager and system owners.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not capture forensic evidence before remediation actions.",
+        "recommendation": "Add tasks to capture forensic evidence before any remediation actions are taken.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks to log and document actions taken.",
+        "recommendation": "Add tasks to log and document all actions taken during the incident response.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not identify the responsible role or owner for manual decision points.",
+        "recommendation": "Specify the responsible role or owner for each manual decision point.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add tasks to collect and preserve relevant audit logs.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform wide-scope actions affecting many users or systems.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not clearly state the purpose of each task.",
+        "recommendation": "Add clear descriptions to each task explaining what it does and why.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include a closing step for post-incident review or lessons learned.",
+        "recommendation": "Add a closing step for post-incident review and lessons learned.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not define escalation paths for uncertain branches.",
+        "recommendation": "Add escalation paths to route uncertain branches to a human analyst.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd7_Block_IP_-_Generic_v2.yml",
+    "playbook_name": "Block IP - Generic v2",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C11",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include any steps to verify that the threat has been removed before unblocking or restoring services.",
+        "recommendation": "Add a verification step to ensure the threat is eradicated before unblocking or restoring services.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C01",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not include a human approval or decision gate before blocking IPs, which is a disruptive action.",
+        "recommendation": "Insert a human approval step before executing tasks that block IPs.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage or severity-assessment step before executing response actions.",
+        "recommendation": "Add a triage step to assess the severity and scope of the incident before taking response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that clearly state their purpose.",
+        "recommendation": "Continue to use clear and descriptive task names and descriptions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include steps to collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add tasks to collect and preserve audit logs relevant to the incident.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not capture forensic evidence before taking actions that could destroy it.",
+        "recommendation": "Include steps to capture forensic evidence before blocking IPs or taking other remediation actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks to log and document actions taken during the response.",
+        "recommendation": "Add tasks to log and document all actions taken during the incident response.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to stakeholders beyond the SOC.",
+        "recommendation": "Add tasks to notify relevant stakeholders, such as incident managers, system owners, and legal teams.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not identify the responsible role or owner for manual decision points.",
+        "recommendation": "Specify the responsible role or owner for each manual decision point in the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not define escalation paths for when automated handling cannot resolve or classify an incident.",
+        "recommendation": "Add escalation paths to route incidents to human analysts when automated handling fails.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not gate wide-scope actions more strictly than single-host or single-user actions.",
+        "recommendation": "Implement stricter authorization for wide-scope actions, such as organization-wide blocks.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a closing step for post-incident review or lessons learned.",
+        "recommendation": "Add a closing step to conduct a post-incident review and capture lessons learned.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd8_BlockADOnPremUser.json",
+    "playbook_name": "BlockADOnPremUser",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C03",
+        "status": "satisfied",
+        "severity": "medium",
+        "rationale": "The playbook includes tasks to add comments to the incident and send emails, which can serve as a record of actions taken.",
+        "recommendation": "Ensure that all actions are logged in a structured format for easy review.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Task names and descriptions are clear and state the purpose of each step, such as 'Disable_Account_on_Azure_AD' and 'Add_comment_to_incident_(V3)'.",
+        "recommendation": "Continue to use descriptive task names and consider adding more detailed descriptions if needed.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include a specific step for post-incident review or lessons learned.",
+        "recommendation": "Add a task at the end of the playbook to document lessons learned and review the incident response.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "satisfied",
+        "severity": "medium",
+        "rationale": "The playbook includes tasks to send emails, which can be used to notify relevant stakeholders.",
+        "recommendation": "Ensure that the email content is clear and includes all necessary stakeholders.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage, severity-assessment, or classification step before executing response actions.",
+        "recommendation": "Add a triage step to assess and categorize the incident before taking response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not explicitly collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add a task to collect and preserve relevant logs before taking remediation actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not specify the role or owner responsible for manual decision points.",
+        "recommendation": "Identify and document the responsible role or owner for each manual decision point in the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not capture forensic evidence before disabling accounts or taking other disruptive actions.",
+        "recommendation": "Add a step to capture forensic evidence before performing any actions that could destroy evidence.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C01",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not include a human approval or decision gate before disabling accounts.",
+        "recommendation": "Add a human approval step before disabling accounts or taking other disruptive actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include recovery or restoration steps.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include failure or uncertain branches that require human analyst intervention.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not perform wide-scope actions that require stronger authorization.",
+        "recommendation": "N/A",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd9_Forcepoint-Block-IP-Nested-Remediation.json",
+    "playbook_name": "Forcepoint-Block-IP-Nested-Remediation",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage, severity-assessment, or classification step before response actions execute.",
+        "recommendation": "Add a step to assess and categorize security events by severity, scope, and type before executing response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that clearly state their purpose.",
+        "recommendation": "Continue to ensure all tasks have clear and descriptive names and descriptions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks that record actions taken, update the incident record, or write to a case management system.",
+        "recommendation": "Add tasks to log and document actions taken during incident response, including updates to the incident record or case management system.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "not_applicable",
+        "severity": "low",
+        "rationale": "The playbook does not include a closing step for post-incident review or lessons learned.",
+        "recommendation": "Consider adding a post-incident review step to capture knowledge gained from incidents for future improvement.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C01",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not include a human approval or decision gate before tasks that block IP addresses.",
+        "recommendation": "Add a human approval step before executing tasks that block IP addresses or perform other disruptive actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include recovery or restoration steps.",
+        "recommendation": "If recovery steps are added, ensure they verify the threat has been removed before restoring services or re-enabling access.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "The playbook does not capture forensic evidence before any task that removes malware, reimages hosts, or deletes artifacts.",
+        "recommendation": "Add steps to capture forensic evidence (memory, disk, logs, samples) before performing any remediation actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not collect or preserve relevant audit logs during handling.",
+        "recommendation": "Add tasks to collect and retain relevant audit logs (authentication logs, endpoint telemetry, network logs) during incident handling.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "Failure or uncertain branches do not route to a human analyst or escalation task.",
+        "recommendation": "Ensure that failure or uncertain branches route to a human analyst or escalation task rather than terminating silently.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "Manual decisions exist, but the responsible role or owner is not identifiable.",
+        "recommendation": "Clearly identify the responsible role or owner for manual decision points in the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include notification or communication tasks to stakeholders beyond the SOC.",
+        "recommendation": "Add tasks to notify relevant stakeholders (incident manager, affected system owners, legal, users) during incident handling.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "violated",
+        "severity": "high",
+        "rationale": "Wide-scope actions are not gated more strictly than single-host or single-user actions.",
+        "recommendation": "Implement stricter authorization for wide-scope actions, such as org-wide blocks or mass account actions, compared to single-host or single-user actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  },
+  {
+    "playbook_file": "rd10_CiscoASA-CreateInboundAccessRuleOnInterf.json",
+    "playbook_name": "CiscoASA-CreateInboundAccessRuleOnInterface",
+    "model_name": "qwen/qwen-2.5-72b-instruct@openai_compat",
+    "retrieved_constraint_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "findings": [
+      {
+        "constraint_id": "C05",
+        "status": "violated",
+        "severity": "medium",
+        "rationale": "The playbook does not include a triage or severity-assessment step before response actions.",
+        "recommendation": "Add a triage step to assess and categorize security events before executing response actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C03",
+        "status": "satisfied",
+        "severity": "medium",
+        "rationale": "The playbook includes tasks to add comments to the incident and update the incident record.",
+        "recommendation": "Continue to ensure all actions are logged and documented.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C06",
+        "status": "violated",
+        "severity": "low",
+        "rationale": "The playbook does not include a closing step for post-incident review or lessons learned.",
+        "recommendation": "Add a post-incident review step to capture knowledge and improve the playbook.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C01",
+        "status": "satisfied",
+        "severity": "high",
+        "rationale": "The playbook includes a human approval step (PostToTeams) before creating or removing access rules.",
+        "recommendation": "Ensure the human approval step is robust and clearly documented.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C04",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks to notify stakeholders beyond the SOC.",
+        "recommendation": "Consider adding notification tasks if relevant stakeholders need to be informed.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C09",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "Tasks have meaningful names and descriptions that state their purpose clearly.",
+        "recommendation": "Continue to use clear and descriptive task names and descriptions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C11",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include recovery or restoration steps.",
+        "recommendation": "If recovery steps are added, ensure they verify threat eradication.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C10",
+        "status": "not_applicable",
+        "severity": "medium",
+        "rationale": "The playbook does not include tasks to collect or preserve audit logs.",
+        "recommendation": "Consider adding audit log collection if it is relevant to the incident response process.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C12",
+        "status": "satisfied",
+        "severity": "low",
+        "rationale": "The responsible role for manual decisions is identifiable (PostToTeams step).",
+        "recommendation": "Ensure all manual decision points clearly identify the responsible role or owner.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C02",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not include tasks to capture forensic evidence.",
+        "recommendation": "Consider adding forensic evidence collection if it is relevant to the incident response process.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C07",
+        "status": "satisfied",
+        "severity": "medium",
+        "rationale": "The playbook routes to a human analyst (PostToTeams step) for decision-making.",
+        "recommendation": "Ensure all uncertain branches route to a human analyst for review.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      },
+      {
+        "constraint_id": "C08",
+        "status": "not_applicable",
+        "severity": "high",
+        "rationale": "The playbook does not include wide-scope actions affecting many users or systems.",
+        "recommendation": "If wide-scope actions are added, ensure they are gated more strictly than single-host or single-user actions.",
+        "evidence_task_ids": [],
+        "evidence_valid": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,237 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "prompt_version": "v2-batched",
+  "kb_backend": null,
+  "playbooks_scored": 10,
+  "rescored_against": "ground_truth.json",
+  "micro_precision": 0.6429,
+  "micro_recall": 0.8491,
+  "micro_f1": 0.7317,
+  "tp": 45,
+  "fp": 25,
+  "fn": 8,
+  "per_playbook": [
+    {
+      "file": "rd1_tim_manual_review_unmodified.yml",
+      "predicted": [
+        "C03",
+        "C04",
+        "C06",
+        "C12"
+      ],
+      "actual": [],
+      "precision": 0.0,
+      "recall": 1.0,
+      "seconds": 10.7
+    },
+    {
+      "file": "rd2_eradication_plan_no_gates.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.875,
+      "recall": 0.875,
+      "seconds": 28.3
+    },
+    {
+      "file": "rd3_search_delete_auto_all_mailboxes.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.9,
+      "recall": 1.0,
+      "seconds": 11.9
+    },
+    {
+      "file": "rd4_handle_fp_full_auto.yml",
+      "predicted": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.5,
+      "recall": 0.75,
+      "seconds": 11.4
+    },
+    {
+      "file": "rd5_Block_Account_-_Generic.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.7,
+      "recall": 1.0,
+      "seconds": 9.5
+    },
+    {
+      "file": "rd6_Active_Directory_Investigation.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C06"
+      ],
+      "precision": 0.125,
+      "recall": 1.0,
+      "seconds": 21.1
+    },
+    {
+      "file": "rd7_Block_IP_-_Generic_v2.yml",
+      "predicted": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C08",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.875,
+      "recall": 0.875,
+      "seconds": 12.2
+    },
+    {
+      "file": "rd8_BlockADOnPremUser.json",
+      "predicted": [
+        "C01"
+      ],
+      "actual": [
+        "C01",
+        "C05",
+        "C06",
+        "C10"
+      ],
+      "precision": 1.0,
+      "recall": 0.25,
+      "seconds": 51.1
+    },
+    {
+      "file": "rd9_Forcepoint-Block-IP-Nested-Remediation.json",
+      "predicted": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.75,
+      "recall": 0.75,
+      "seconds": 68.3
+    },
+    {
+      "file": "rd10_CiscoASA-CreateInboundAccessRuleOnInterf.json",
+      "predicted": [
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "actual": [
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "precision": 0.5714,
+      "recall": 1.0,
+      "seconds": 37.6
+    }
+  ]
+}

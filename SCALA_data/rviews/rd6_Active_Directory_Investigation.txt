@@ -1,0 +1,36 @@
+PLAYBOOK: Active Directory Investigation  [xsoar_yaml]  (10 tasks)
+SOURCE:   real_derived/rd6_Active_Directory_Investigation.yml
+
+R1 - TASK INVENTORY (what actions exist)
+  [0] (start) (unnamed)
+  [1] (regular) Review the Active Directory AdminSDHolder permissions  | Review the AdminSDHolder permissions to make sure there are no unwanted users/groups. - 
+
+
+  [2] (regular) Run the Active Directory ACL Scanner  | Identify compromised accounts. 
+Attackers will aim for a high privileged domain account th
+  [3] (collection) Review the Active Directory ACL Scanner report  | Sends an email to the configured users requesting they review the report and supply a list
+  [4] (condition) Was a compromised account detected?  | ''
+  [6] (regular) Review the Active Directory event log  | Partial list of domain controller events to pay attention to: 
+Note: If ACL Scanner return
+  [7] (regular) Remediate according to the Active Directory event log findings  | Remediate the issues identified in the Active Directory event log review.
+  [8] (title) Done
+  [9] (regular) Disable compromised account in Active Directory  | tool/op: |||ad-disable-account  | Disable an Active Directory user account.
+  [10] (regular) Set Compromised users  | tool/op: Builtin|||setIncident  | Change the properties of an incident.
+
+R2 - CONTROL FLOW (successor edges)
+  0 -> 1
+  1 -> 2
+  10 -> 9
+  2 -> 3
+  3 -> 4
+  4 -> 6, 10
+  6 -> 7
+  7 -> 8
+  9 -> 6
+
+R3 - HUMAN vs AUTOMATED (who decides / acts)
+  [3] collection: Review the Active Directory ACL Scanner report -> HUMAN input (analyst form)
+  [4] condition: Was a compromised account detected? -> AUTOMATED value-check (conditions array)
+
+R4 - BRANCH TOPOLOGY (where each decision's exits lead)
+  [4] Was a compromised account detected?: exits -> 6, 10

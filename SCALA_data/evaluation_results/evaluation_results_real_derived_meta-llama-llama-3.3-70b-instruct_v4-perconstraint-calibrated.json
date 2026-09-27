@@ -1,0 +1,221 @@
+{
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "prompt_version": "v4-perconstraint-calibrated",
+  "kb_backend": null,
+  "playbooks_scored": 10,
+  "rescored_against": "ground_truth.json",
+  "micro_precision": 0.5185,
+  "micro_recall": 0.5283,
+  "micro_f1": 0.5234,
+  "tp": 28,
+  "fp": 26,
+  "fn": 25,
+  "per_playbook": [
+    {
+      "file": "rd1_tim_manual_review_unmodified.yml",
+      "predicted": [
+        "C12"
+      ],
+      "actual": [],
+      "precision": 0.0,
+      "recall": 1.0,
+      "seconds": 37.7
+    },
+    {
+      "file": "rd2_eradication_plan_no_gates.yml",
+      "predicted": [
+        "C02",
+        "C05",
+        "C06",
+        "C08",
+        "C11",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.5,
+      "recall": 0.375,
+      "seconds": 39.7
+    },
+    {
+      "file": "rd3_search_delete_auto_all_mailboxes.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C05",
+        "C06",
+        "C08",
+        "C11",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.7143,
+      "recall": 0.5556,
+      "seconds": 42.0
+    },
+    {
+      "file": "rd4_handle_fp_full_auto.yml",
+      "predicted": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C08",
+        "C11",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.25,
+      "recall": 0.5,
+      "seconds": 36.9
+    },
+    {
+      "file": "rd5_Block_Account_-_Generic.yml",
+      "predicted": [
+        "C01",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C11",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10"
+      ],
+      "precision": 0.625,
+      "recall": 0.7143,
+      "seconds": 36.8
+    },
+    {
+      "file": "rd6_Active_Directory_Investigation.yml",
+      "predicted": [
+        "C01",
+        "C02",
+        "C05",
+        "C08",
+        "C11",
+        "C12"
+      ],
+      "actual": [
+        "C06"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "seconds": 35.5
+    },
+    {
+      "file": "rd7_Block_IP_-_Generic_v2.yml",
+      "predicted": [
+        "C01",
+        "C05",
+        "C06",
+        "C08",
+        "C12"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.8,
+      "recall": 0.5,
+      "seconds": 42.5
+    },
+    {
+      "file": "rd8_BlockADOnPremUser.json",
+      "predicted": [
+        "C01",
+        "C05",
+        "C06",
+        "C08",
+        "C11"
+      ],
+      "actual": [
+        "C01",
+        "C05",
+        "C06",
+        "C10"
+      ],
+      "precision": 0.6,
+      "recall": 0.75,
+      "seconds": 79.8
+    },
+    {
+      "file": "rd9_Forcepoint-Block-IP-Nested-Remediation.json",
+      "predicted": [
+        "C01",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C11"
+      ],
+      "actual": [
+        "C01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "precision": 0.8333,
+      "recall": 0.625,
+      "seconds": 64.2
+    },
+    {
+      "file": "rd10_CiscoASA-CreateInboundAccessRuleOnInterf.json",
+      "predicted": [
+        "C06",
+        "C11"
+      ],
+      "actual": [
+        "C06",
+        "C07",
+        "C10",
+        "C12"
+      ],
+      "precision": 0.5,
+      "recall": 0.25,
+      "seconds": 27.9
+    }
+  ]
+}
