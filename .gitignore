@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# SCALA: local run artefacts (results that matter live in SCALA_data/)
+scala/outputs/chroma/
+scala/outputs/*.json
